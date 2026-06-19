@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>SoloBrandOS | สร้างธุรกิจคนเดียว ให้โตแบบมืออาชีพพร้อมระบบขายอัตโนมัติ</title>
+  <meta name="description" content="คอร์ส + เทมเพลตและระบบ Notion ที่สอนและเซ็ตอัปการสร้างรายได้เสริมจาก Digital Products ตั้งแต่ศูนย์จนเปิดร้านและขายอัตโนมัติได้จริง 24/7">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%2302040A%22/><rect x=%2220%22 y=%2220%22 width=%2260%22 height=%2260%22 rx=%228%22 fill=%22%2338B6FF%22/><text x=%2250%%22 y=%2255%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Syne,sans-serif%22 font-weight=%22800%22 font-size=%2232%22 fill=%22%2302040A%22>dw</text></svg>">
+
+  <!-- Fonts: Google Fonts for Mitr -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Custom Override Styles for Product Landing Page -->
+  <style>
+    :root {
+      --font-headings: 'Mitr', sans-serif;
+      --font-body: 'Mitr', sans-serif;
+      --accent-brand: #4686fe;
+      --accent-brand-rgb: 70, 134, 254;
+    }
+    body {
+      font-family: var(--font-body);
+    }
+    /* Hero section overrides */
+    .product-hero {
+      padding: 140px 24px 80px;
+      position: relative;
+    }
+    .hero-two-cols {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .hero-visual {
+      width: 100%;
+      position: relative;
+    }
+    .proof-container {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--border-radius-lg);
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .proof-tag {
+      align-self: flex-start;
+      background: rgba(var(--accent-brand-rgb), 0.08);
+      color: var(--accent-brand);
+      border: 1px solid rgba(var(--accent-brand-rgb), 0.15);
+      font-family: var(--font-headings);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 8px;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: uppercase;
+    }
+    .proof-images {
+      display: grid;
+      grid-template-columns: 1.45fr 0.85fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .proof-main-img-wrapper {
+      border-radius: var(--border-radius-sm);
+      border: 1px solid var(--glass-border);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background: #fff;
+    }
+    .proof-main-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .proof-side-img-wrapper {
+      border-radius: var(--border-radius-sm);
+      border: 1px solid var(--glass-border);
+      overflow: hidden;
+      max-height: 220px;
+      background: #fff;
+    }
+    .proof-side-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .proof-caption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-top: 4px;
+    }
+    .hero-bullets {
+      margin: 24px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+    .hero-bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.98rem;
+      color: var(--text-main);
+      line-height: 1.4;
+      text-align: left;
+    }
+    .hero-bullet-item i {
+      color: var(--accent-brand);
+      font-size: 1rem;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 991px) {
+      .product-hero {
+        padding: 100px 24px 60px;
+      }
+      .hero-two-cols {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .hero-content {
+        align-items: center;
+        text-align: center;
+      }
+      .hero-bullets {
+        align-items: center;
+      }
+    }
+    @media (max-width: 576px) {
+      .proof-images {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .proof-side-img-wrapper {
+        max-height: 180px;
+      }
+    }
+
+    /* Key Perspectives / Bullet points */
+    .perspectives-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .perspective-card {
+      padding: 28px;
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--glass-border);
+      background: var(--bg-card);
+      box-shadow: var(--glass-shadow);
+      text-align: left;
+    }
+    .perspective-icon {
+      font-size: 1.8rem;
+      color: var(--accent-brand);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .perspective-card h3 {
+      font-family: var(--font-headings);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+    .perspective-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Course Modules Grid */
+    .modules-section {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--glass-border-subtle);
+      border-bottom: 1px solid var(--glass-border-subtle);
+    }
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .module-card {
+      padding: 36px;
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--glass-border);
+      background: var(--bg-card);
+      box-shadow: var(--glass-shadow);
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+    .module-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--glass-shadow-hover);
+    }
+    .module-num {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-brand);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .module-title {
+      font-family: var(--font-headings);
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+    .module-desc {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* What you get section */
+    .get-section {
+      padding: 100px 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .get-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .get-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+    .get-item i {
+      color: var(--accent-green);
+      font-size: 1.2rem;
+      margin-top: 3px;
+    }
+
+    /* Pricing Section */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 900px;
+      margin: 40px auto 0;
+    }
+    .price-card {
+      padding: 48px 36px;
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--glass-border);
+      background: var(--bg-card);
+      box-shadow: var(--glass-shadow);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-smooth);
+    }
+    .price-card:hover {
+      transform: translateY(-4px);
+    }
+    .price-card.featured {
+      border-color: var(--accent-brand);
+      box-shadow: 0 15px 35px rgba(var(--accent-brand-rgb), 0.15);
+    }
+    .price-card.featured::after {
+      content: 'RECOMMENDED';
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      background: rgba(var(--accent-brand-rgb), 0.1);
+      color: var(--accent-brand);
+      border: 1px solid rgba(var(--accent-brand-rgb), 0.2);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+    .price-title {
+      font-family: var(--font-headings);
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+    .price-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .price-value {
+      font-family: var(--font-headings);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .price-value span {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .price-features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-grow: 1;
+    }
+    .price-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+    .price-feature-item i {
+      color: var(--accent-brand);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive style updates */
+    @media (max-width: 991px) {
+      .perspectives-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .get-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+      .get-list {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .modules-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .price-card {
+        padding: 36px 24px;
+      }
+    }
+
+    /* Earnings Card */
+    .earnings-card {
+      margin-top: 60px;
+      padding: 40px;
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--glass-border);
+      background: var(--bg-card);
+      box-shadow: var(--glass-shadow);
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+      text-align: left;
+    }
+    @media (max-width: 768px) {
+      .earnings-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toast Notification Wrapper -->
+  <div id="toast" class="toast-notification">
+    <i class="fa-solid fa-circle-info toast-icon"></i>
+    <span id="toast-message" class="toast-message">แจ้งเตือนระบบ</span>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="nav-wrapper">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link">
+        <div class="logo-mark">dw</div>
+        <span class="logo-text">d.withdeem</span>
+      </a>
+      
+      <nav class="nav-menu">
+        <a href="index.html">หน้าแรก</a>
+        <a href="#about-course">เกี่ยวกับคลาส</a>
+        <a href="#modules">เนื้อหาเรียน</a>
+        <a href="#pricing">สมัครเรียน</a>
+      </nav>
+      
+      <div class="nav-cta">
+        <a href="#pricing" class="btn btn-primary" style="background-color: var(--accent-brand); color: #fff;">สมัครเรียนเลย →</a>
+      </div>
+
+      <button class="burger-menu" aria-label="Toggle navigation">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 1. Hero Section -->
+  <div class="section-wrapper bg-main">
+    <div class="blob" style="width:600px;height:600px;background:rgba(var(--accent-brand-rgb),0.06);top:-150px;right:-200px;"></div>
+    <div class="blob" style="width:400px;height:400px;background:rgba(56,182,255,0.04);bottom:-100px;left:-100px;"></div>
+    <section class="product-hero">
+      <div class="hero-two-cols">
+        <!-- Hero Content (Left) -->
+        <div class="hero-content reveal">
+          <div class="hero-badge-wrap" style="margin-bottom: 20px;">
+            <div class="eyebrow-badge blue">
+              <span class="badge-dot"></span>
+              SOLOBRANDOS &middot; DIGITAL PRODUCT BUSINESS
+            </div>
+          </div>
+          
+          <h1 style="font-family: var(--font-headings); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.25; margin-bottom: 20px; letter-spacing: -0.01em;">
+            สร้างธุรกิจคนเดียว ให้โตแบบมืออาชีพ<br>
+            พร้อมระบบขาย <span style="color: var(--accent-brand);">Digital Product</span> อัตโนมัติ
+          </h1>
+          
+          <p class="hero-subtitle" style="font-size: clamp(0.98rem, 1.8vw, 1.08rem); color: var(--text-muted); line-height: 1.65; margin-bottom: 24px;">
+            คอร์สเรียน + ระบบหลังบ้าน Notion ที่สอนคุณตั้งแต่ระดับศูนย์ จนถึงขั้นเปิดขาย Digital Product และรับชำระเงินได้จริง ครบทุกขั้นตอน หาไอเดีย → สร้างสินค้า → ทำเว็บ → รับเงิน → ส่งสินค้า พร้อมระบบอัตโนมัติจริงที่ผมใช้งานอยู่ทุกวัน
+          </p>
+
+          <div class="hero-bullets">
+            <div class="hero-bullet-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>พิสูจน์แล้วจากผลลัพธ์จริง:</strong> สร้างรายได้สะสมมากกว่า 227,000 บาท</span>
+            </div>
+            <div class="hero-bullet-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>ระบบทำงานแทนตัวเรา:</strong> ชำระเงินและส่งมอบสินค้าให้ลูกค้าอัตโนมัติ 24/7</span>
+            </div>
+            <div class="hero-bullet-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>ก๊อปปี้เทมเพลตไปใช้ได้เลย:</strong> Notion Workspace สำหรับทำธุรกิจของตัวเอง</span>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; width: 100%;">
+            <a href="#pricing" class="btn btn-primary" style="padding: 14px 28px; font-weight: 600; border-radius: var(--border-radius-sm); background-color: var(--accent-brand); color: #fff;">สมัครเรียนคอร์ส — 1,490 ฿</a>
+            <a href="#modules" class="btn btn-secondary" style="padding: 14px 28px; font-weight: 600; border-radius: var(--border-radius-sm);">ดูเนื้อหาเรียน</a>
+          </div>
+        </div>
+
+        <!-- Hero Visual (Right - Proof Section) -->
+        <div class="hero-visual reveal delay-1">
+          <div class="proof-container">
+            <div class="proof-tag">
+              <i class="fa-solid fa-chart-line"></i> PROOF OF SYSTEM
+            </div>
+            <h3 style="font-family: var(--font-headings); font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px; line-height: 1.3;">
+              ผลลัพธ์จริงที่ระบบทำงานแทนคุณ 24 ชั่วโมง
+            </h3>
+            
+            <div class="proof-images">
+              <!-- Left: Stripe Graph -->
+              <div class="proof-main-img-wrapper">
+                <img src="re.png" alt="Stripe Gross Revenue Graph" class="proof-main-img">
+              </div>
+              <!-- Right: Stripe Sales List -->
+              <div class="proof-side-img-wrapper">
+                <img src="re2.png" alt="Stripe Transactions List" class="proof-side-img">
+              </div>
+            </div>
+            
+            <p class="proof-caption">
+              ยอดขายรวมสะสม <strong>227K</strong> และรายการรับเงินสำเร็จอัตโนมัติ<br>
+              <span style="font-size: 0.75rem; opacity: 0.85;">(ระบบส่งของทาง Gmail และจดสถิติใน Notion ทันทีเมื่อลูกค้าชำระเงิน)</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 2. Perspectives Section (ความเชื่อ/มุมมอง) -->
+  <div class="section-wrapper bg-alt" id="about-course">
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-brand);">แนวคิดคอร์สเรียน</span>
+        <h2 class="section-title">คุณไม่ต้องรอให้พร้อม 100%… ก็เริ่มได้</h2>
+        <p class="section-subtitle">ทุกวันนี้ตลาดความรู้และวิธีลัด (Digital Products) โตขึ้นทุกวัน และคุณมีบางอย่างในตัวเองที่คนอื่นยินดีจ่ายเพื่อซื้อไปใช้ประหยัดเวลา</p>
+      </div>
+
+      <div class="perspectives-grid">
+        <div class="perspective-card reveal delay-1">
+          <span class="perspective-icon"><i class="fa-solid fa-lightbulb"></i></span>
+          <h3>ตลาดความรู้ยังว่างมาก</h3>
+          <p>ผู้คนยินดีจ่ายให้กับ "ความรู้พร้อมใช้" หรือ "เครื่องมือประหยัดเวลา" มากขึ้นเรื่อยๆ เปลี่ยนสิ่งที่คุณรู้อยู่แล้วให้เป็นรายได้เสริมที่ทำงานแทนคุณ</p>
+        </div>
+
+        <div class="perspective-card reveal delay-2">
+          <span class="perspective-icon"><i class="fa-solid fa-clock"></i></span>
+          <h3>ขายได้ตลอดชีพ 24/7</h3>
+          <p>ไม่มีต้นทุนค่าสต็อกสินค้า ไม่ต้องมีหน้าร้าน และไม่ต้องมาตอบข้อความส่งของเอง ระบบจะทำการจัดสรรส่งของและรับเงินแทนคุณแม้ในยามหลับ</p>
+        </div>
+
+        <div class="perspective-card reveal delay-3">
+          <span class="perspective-icon"><i class="fa-solid fa-chart-line"></i></span>
+          <h3>สร้างเพื่อเรียนรู้และเติบโต</h3>
+          <p>เรียนรู้วิธีสร้างตัวตนและแบรนด์บน IG + Threads ด้วย Growth Loop ที่ทำให้คนสนใจ แตกยอดสร้างรายได้เสริมโดยไม่กระทบงานประจำหลัก</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 3. Course Modules Section -->
+  <div class="section-wrapper bg-main modules-section" id="modules">
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-brand);">เนื้อหาการเรียนการสอน</span>
+        <h2 class="section-title">ผ่า 6 โมดูล เจาะลึกกระบวนการสร้างระบบ</h2>
+        <p class="section-subtitle">เรียนรู้ทีละสเต็ปอย่างเป็นขั้นตอน (Step-by-Step) เพื่อสร้างแบรนด์ วาง Landing Page และวางระบบอัตโนมัติ</p>
+      </div>
+
+      <div class="reveal delay-1" style="max-width: 800px; margin: 0 auto 40px; border-radius: var(--border-radius-lg); overflow: hidden; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);">
+        <img src="../img/Msr1nPQeH67dRNM7tq3SZX9EgrM.png" alt="Modules Overview Banner" style="width: 100%; height: auto; display: block;">
+      </div>
+
+      <div class="modules-grid">
+        <!-- Module 1 -->
+        <div class="module-card reveal delay-1" style="display: flex; flex-direction: column; align-items: flex-start;">
+          <img src="../img/Oq3wm1F5CZ5j223XVnjc6u7Bqs.png" alt="Module 1 icon" style="width: 70px; height: 70px; object-fit: contain; margin-bottom: 20px;">
+          <span class="module-num">MODULE 1</span>
+          <h3 class="module-title">Start from Self &middot; รู้จักตัวเองและเลือกเส้นทางธุรกิจที่ใช่</h3>
+          <p class="module-desc">ค้นหาจุดแข็ง ความถนัด และสิ่งที่คุณชอบ เพื่อกำหนดทิศทางธุรกิจดิจิทัลให้เหมาะกับตัวเองตั้งแต่เริ่มต้น ป้องกันการสับสนหรือหลงทางไปกับสิ่งที่ไม่ใช่ตัวเรา</p>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="module-card reveal delay-2" style="display: flex; flex-direction: column; align-items: flex-start;">
+          <img src="../img/foj4bXUONFHygiJt3RZ0rZVeu8.png" alt="Module 2 icon" style="width: 70px; height: 70px; object-fit: contain; margin-bottom: 20px;">
+          <span class="module-num">MODULE 2</span>
+          <h3 class="module-title">What to Sell &middot; ค้นหาและสร้างสินค้า Digital Product ที่เหมาะกับคุณ</h3>
+          <p class="module-desc">ทำความเข้าใจประเภทสินค้าดิจิทัล (E-Books, Notion Templates, คลาสเรียน) เรียนรู้วิธีหาไอเดียและสร้างสินค้าที่ตรงกับความต้องการของตลาด พร้อมแบบประเมินและ Case Study</p>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="module-card reveal delay-1" style="display: flex; flex-direction: column; align-items: flex-start;">
+          <img src="../img/xFN9oZkRrtFSucDTMRVzioXHcRU.png" alt="Module 3 icon" style="width: 70px; height: 70px; object-fit: contain; margin-bottom: 20px;">
+          <span class="module-num">MODULE 3</span>
+          <h3 class="module-title">PageOS &middot; สร้าง Landing Page ที่ดึงดูดสายตาและปิดการขาย</h3>
+          <p class="module-desc">เรียนรู้วิธีการออกแบบหน้าขายสินค้า (Landing Page) ด้วยโปรแกรมดีไซน์ชั้นนำอย่าง Framer เข้าใจจิตวิทยาและโครงสร้างคำโฆษณาที่ช่วยเพิ่มโอกาสปิดการขายได้จริง</p>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="module-card reveal delay-2" style="display: flex; flex-direction: column; align-items: flex-start;">
+          <img src="../img/NFk8qQ0QZLGZ2ru8xwrypinb40.png" alt="Module 4 icon" style="width: 70px; height: 70px; object-fit: contain; margin-bottom: 20px;">
+          <span class="module-num">MODULE 4</span>
+          <h3 class="module-title">PaymentOS &middot; วางระบบรับเงินอัตโนมัติผ่าน Stripe</h3>
+          <p class="module-desc">เชื่อมต่อระบบชำระเงินมาตรฐานโลกอย่าง Stripe เพื่อรับเงินผ่านบัตรเครดิตและ PromptPay อย่างปลอดภัย พร้อมระบบสรุปข้อมูลยอดขายและกระแสเงินเข้าในตัว</p>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="module-card reveal delay-1" style="display: flex; flex-direction: column; align-items: flex-start;">
+          <img src="../img/6tEce7TLv8rQWEPFEiIQUqGhEDs.png" alt="Module 5 icon" style="width: 70px; height: 70px; object-fit: contain; margin-bottom: 20px;">
+          <span class="module-num">MODULE 5</span>
+          <h3 class="module-title">DeliveryOS &middot; ส่งมอบสินค้าอัตโนมัติ 24 ชั่วโมง</h3>
+          <p class="module-desc">เชื่อมต่อระบบรับเงินเข้ากับระบบส่งมอบสินค้าอัตโนมัติด้วย Gmail หรือ Notion API เมื่อลูกค้าชำระเงินสำเร็จ ระบบจะจัดส่งไฟล์หรือลิงก์เข้าถึงให้ทันทีโดยที่คุณไม่ต้องกดส่งมือ</p>
+        </div>
+
+        <!-- Module 6 -->
+        <div class="module-card reveal delay-2" style="display: flex; flex-direction: column; align-items: flex-start;">
+          <img src="../img/LQymuulHEuwqiYuvZmCrthGZDc.png" alt="Module 6 icon" style="width: 70px; height: 70px; object-fit: contain; margin-bottom: 20px;">
+          <span class="module-num">MODULE 6</span>
+          <h3 class="module-title">BrandOS + Growth Loop &middot; สร้างผู้ติดตามและระบบเติบโต</h3>
+          <p class="module-desc">เรียนรู้วิธีการทำการตลาดแบบออร์แกนิก (Organic Marketing) ผ่านช่องทาง IG + Threads วางคอนเทนต์ดึงดูด สร้างความน่าเชื่อถือ และเปลี่ยนผู้ติดตามให้กลายเป็นลูกค้าอย่างเป็นธรรมชาติ</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 4. What You'll Get Section -->
+  <div class="section-wrapper bg-alt">
+    <section class="section" style="max-width: 1000px; padding: 60px 24px 20px; text-align: center; margin: 0 auto;">
+      <div class="reveal delay-1" style="border-radius: var(--border-radius-lg); overflow: hidden; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);">
+        <img src="../img/NSFskaUnTDD0tldIyoFif2P8RcU.png" alt="What You'll Get Banner" style="width: 100%; height: auto; display: block;">
+      </div>
+    </section>
+    
+    <section class="get-section" style="padding-top: 20px;">
+      <div class="reveal delay-1">
+        <span class="section-eyebrow" style="color: var(--accent-brand);">สิ่งที่คุณจะได้รับ</span>
+        <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">เรียนแล้ว ได้เครื่องมือและระบบไปใช้ทันที</h2>
+        <p class="section-subtitle" style="text-align: left; margin-bottom: 24px;">คลาสนี้เน้นผลลัพธ์และการนำไปใช้จริง คุณจะไม่ได้เรียนแค่ทฤษฎี แต่จะได้ระบบ Notion Workspace และชุดเทมเพลตพร้อมรันทันที</p>
+        
+        <div class="get-list">
+          <div class="get-item">
+            <i class="fa-solid fa-circle-check" style="color: var(--accent-brand);"></i>
+            <span><strong>เข้าเรียนได้ตลอดชีพ:</strong> ไม่มีหมดอายุ พร้อมรับเนื้อหาอัปเดตใหม่ๆ เสมอ</span>
+          </div>
+          <div class="get-item">
+            <i class="fa-solid fa-circle-check" style="color: var(--accent-brand);"></i>
+            <span><strong>วิดีโอ Step-by-Step:</strong> เจาะลึกคลิปละ 10-15 นาที สั้น กระชับ ทำตามง่าย</span>
+          </div>
+          <div class="get-item">
+            <i class="fa-solid fa-circle-check" style="color: var(--accent-brand);"></i>
+            <span><strong>Notion Workspace & Prompts:</strong> เทมเพลตคุมสถิติ คลังไอเดีย และคีย์ลัด AI ช่วยคิดคอนเทนต์</span>
+          </div>
+          <div class="get-item">
+            <i class="fa-solid fa-circle-check" style="color: var(--accent-brand);"></i>
+            <span><strong>ระบบ Automation สมบูรณ์:</strong> แนะนำวิธีกดสร้างระบบส่งมอบสินค้าอัตโนมัติ 0 บาทด้วย Make/Zapier</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal delay-2" style="display: flex; flex-direction: column; gap: 24px;">
+        <!-- Highlight Card 1: เริ่มต้นได้ทันที -->
+        <div style="background: rgba(var(--accent-brand-rgb), 0.03); border: 1px dashed rgba(var(--accent-brand-rgb), 0.2); border-radius: var(--border-radius-lg); padding: 32px; text-align: left; position: relative; overflow: hidden;">
+          <span style="font-family: var(--font-headings); font-weight: 700; color: var(--accent-brand); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; display: block; margin-bottom: 12px;">GET STARTED INSTANTLY</span>
+          <h3 style="font-family: var(--font-headings); font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; color: var(--text-main);">เริ่มต้นได้ทันที</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+            เข้าถึงเครื่องมือและระบบพร้อมใช้งานได้ทันที เพื่อให้คุณเริ่มทดลองทำจริงโดยไม่มีข้ออ้างเรื่องเงินทุนหรือความพร้อมใดๆ
+          </p>
+          <div style="border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);">
+            <img src="../img/bjdFf8ncRVKNHmi6YcM6R56Pzz4.png" alt="เริ่มต้นได้ทันที" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+
+        <!-- Highlight Card 2: เทมเพลต + AI ผู้ช่วยส่วนตัว -->
+        <div style="background: rgba(var(--accent-brand-rgb), 0.03); border: 1px dashed rgba(var(--accent-brand-rgb), 0.2); border-radius: var(--border-radius-lg); padding: 32px; text-align: left; position: relative; overflow: hidden;">
+          <span style="font-family: var(--font-headings); font-weight: 700; color: var(--accent-brand); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; display: block; margin-bottom: 12px;">EXCLUSIVE ASSISTANT</span>
+          <h3 style="font-family: var(--font-headings); font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; color: var(--text-main);">เทมเพลต + AI ผู้ช่วยส่วนตัว</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+            เหมือนมีผมคอยช่วยคุณตลอดเวลา ด้วยระบบเทมเพลต Notion พร้อมใช้งาน + AI Prompts ที่ช่วยแนะนำ แก้ปัญหา และช่วยคิดคอนเทนต์ให้ทันที
+          </p>
+          <div style="border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);">
+            <img src="../img/qLEIBHm1Zs40ARuxrFy0tID32wU.png" alt="เทมเพลต + AI ผู้ช่วยส่วนตัว" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 5. Instructor Section (Deem's story) -->
+  <div class="section-wrapper bg-main">
+    <section class="section" id="instructor" style="max-width: 1000px; margin: 0 auto;">
+      <div class="about-grid">
+        <div class="about-left reveal delay-1">
+          <div class="about-image-container">
+            <div class="about-image-gradient"></div>
+            <img src="../img/4yClx3cCPK6iJD5zou3LwRhvo.jpg" alt="ชลสิทธิ์ รักษาชล (ดีม)" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="about-photo-badge">ผู้เขียนคอร์สเรียน</div>
+          </div>
+        </div>
+        
+        <div class="about-right reveal delay-2">
+          <span class="about-name-mono">CHONLASIT "DEEM" RAKSACHON</span>
+          <h2 class="about-name">ชลสิทธิ์ รักษาชล (ดีม)</h2>
+          
+          <div class="about-quote-container">
+            <blockquote class="about-quote">
+              "ผมเริ่มสร้างธุรกิจดิจิทัลหลังงานประจำ ทำเงินได้มากกว่าเงินเดือน และนี่คือระบบจริงที่ผมใช้งานอยู่ทุกวัน"
+            </blockquote>
+          </div>
+
+          <div class="about-bio">
+            <p>ผมชื่อดีม ปัจจุบันมีอายุ 23 ปี ทำงานประจำรับราชการ (ทหารอากาศ) แต่ไม่เคยหยุดผลักดันตัวเองให้ออกนอกกรอบงานประจำที่ซ้ำซาก</p>
+            <p>ผมเริ่มต้นจากศูนย์ ลองผิดลองถูก และพัฒนาระบบ Notion + Automation เพื่อช่วยทำงานหลังบ้านแทนตัวเรา จนสามารถสร้างและส่งมอบสินค้าดิจิทัลให้กับผู้คนได้ตลอด 24 ชั่วโมง ตอนนี้รายได้จากธุรกิจเสริมตัวนี้แซงหน้าเงินเดือนราชการหลักไปแล้ว และมันให้อิสระในการใช้ชีวิตแบบที่ผมฝัน</p>
+            <p>สิ่งที่ผมสอนไม่ใช่ทฤษฎีจากตำรา แต่คือสิ่งที่ผมออกแบบ ใช้งานจริง รันเงินจริง และได้ผลจริงในทุกวัน ผมอยากช่วยประหยัดเวลาให้ผู้ที่เริ่มสร้างแบรนด์ ไม่ต้องเดินอ้อมหรือหลงทางเองแบบผมครับ</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earnings Results Block -->
+      <div class="earnings-card reveal delay-2">
+        <div style="border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);">
+          <img src="../img/a7SoAdTMrykSRNl2gY8Ih9t2Rx4.png" alt="ผลลัพธ์รายได้หลักหมื่นต่อเดือน" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div>
+          <h3 style="font-family: var(--font-headings); font-size: 1.4rem; font-weight: 800; margin-bottom: 16px; color: var(--text-main);">ผลลัพธ์ที่พิสูจน์แล้วว่าระบบทำงานได้จริง</h3>
+          <p style="font-size: 0.98rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px;">
+            "นี่คือผลลัพธ์ที่ผมทำได้ จากเวลาเพียง 2 เดือนเศษ เริ่มต้นคนเดียว วางระบบ จนสร้างรายได้แบบนี้"
+          </p>
+          <p style="font-size: 0.98rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
+            ผมไม่ได้เอามาโชว์เพื่ออวดอ้าง แต่เพื่อให้คุณเห็นว่าแนวคิดและระบบหลังบ้านที่ผมนำมาถ่ายทอดในคอร์สนี้ มันทำงานได้จริง สร้างรายได้จริง และทุกอย่างสามารถเริ่มต้นจากศูนย์ได้เช่นเดียวกัน
+          </p>
+          <span style="font-family: var(--font-headings); font-weight: 700; color: var(--accent-brand); font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-arrow-right"></i> คุณก็ทำได้ — ถ้ามีระบบและแนวทางที่ถูกต้อง
+          </span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Notion Mockup Showcase -->
+  <div class="section-wrapper bg-main" style="border-top: 1px solid var(--glass-border-subtle); border-bottom: 1px solid var(--glass-border-subtle);">
+    <section class="section" style="max-width: 1000px; padding: 60px 24px 40px; text-align: center; margin: 0 auto;">
+      <div class="section-header" style="margin-bottom: 36px;">
+        <span class="section-eyebrow" style="color: var(--accent-brand);">Notion System Dashboard</span>
+        <h2 class="section-title">เทมเพลตและระบบทั้งหมดที่คุณจะได้รับ</h2>
+        <p class="section-subtitle">จำลองระบบหลังบ้าน Notion Workspace ครบวงจรที่ให้คุณคัดลอก (Duplicate) ไปเริ่มใช้งานเพื่อบันทึกยอดขายและสถิติต่างๆ ได้ทันที</p>
+      </div>
+      <div class="reveal delay-1" style="max-width: 780px; margin: 0 auto; border-radius: var(--border-radius-lg); overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 20px 45px rgba(0,0,0,0.12);">
+        <img src="../img/SoloBrandOS.png" alt="SoloBrandOS Notion Dashboard" style="width: 100%; height: auto; display: block;">
+      </div>
+    </section>
+  </div>
+
+  <!-- 6. Pricing Plans (สมัครเรียน) -->
+  <div class="section-wrapper bg-alt" id="pricing">
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-brand);">ราคาและเงื่อนไข</span>
+        <h2 class="section-title">เลือกแพ็กเกจที่คุณต้องการเริ่มต้น</h2>
+        <p class="section-subtitle">เข้าถึงคลาสเรียนและรับเครื่องมือเทมเพลตพร้อมระบบหลังบ้านทันทีหลังชำระเงินเสร็จสิ้น</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Basic Plan -->
+        <div class="price-card featured reveal delay-1">
+          <h3 class="price-title">SoloBrandOS Basic</h3>
+          <p class="price-desc">เหมาะสำหรับคนที่ต้องการเรียนรู้ทฤษฎี ทำตามคู่มือ และติดตั้งระบบหลังบ้านด้วยตนเอง</p>
+          
+          <div class="price-value">
+            1,490 ฿ <span>/ เข้าเรียนตลอดชีพ</span>
+          </div>
+          
+          <div class="price-features">
+            <div class="price-feature-item">
+              <i class="fa-solid fa-check"></i>
+              <span>เข้าเรียน 6 Modules ละเอียด (วิดีโอ)</span>
+            </div>
+            <div class="price-feature-item">
+              <i class="fa-solid fa-check"></i>
+              <span>ชุด Notion Business Workspace ระบบจริง</span>
+            </div>
+            <div class="price-feature-item">
+              <i class="fa-solid fa-check"></i>
+              <span>เทมเพลตจัดตาราง Content & คลังเก็บไอเดีย</span>
+            </div>
+            <div class="price-feature-item">
+              <i class="fa-solid fa-check"></i>
+              <span>คลังคำสั่ง AI ผู้ช่วย (GPT Prompt)</span>
+            </div>
+            <div class="price-feature-item">
+              <i class="fa-solid fa-check"></i>
+              <span>คู่มือการผูกระบบอัตโนมัติ (Make/Zapier)</span>
+            </div>
+          </div>
+          
+          <a href="https://buy.stripe.com/aFabIU1fm29g5Toaa9cfK0c" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background-color: var(--accent-brand); color: #fff; border-radius: var(--border-radius-sm);">สมัครเรียน Basic — 1,490 ฿</a>
+        </div>
+
+        <!-- Pro Plan (Done-For-You) -->
+        <div class="price-card reveal delay-2">
+          <h3 class="price-title">SoloBrandOS Pro / Setup</h3>
+          <p class="price-desc">เหมาะสำหรับคนที่ไม่อยากเสียเวลาติดตั้งระบบเอง ต้องการการพูดคุยจับมือทำแบบ 1:1 กับดีม</p>
+          
+          <div class="price-value">
+            ปรึกษาฟรี <span>/ ทำระบบให้ครบ</span>
+          </div>
+          
+          <div class="price-features">
+            <div class="price-feature-item">
+              <i class="fa-solid fa-check"></i>
+              <span>ได้รับเนื้อหาการเรียน Basic ครบถ้วน</span>
+            </div>
+            <div class="price-feature-item">
+              <i class="fa-solid fa-check"></i>
+              <span>1:1 Consult กับดีม (วิดีโอคอล 2 ครั้ง)</span>
+            </div>
+            <div class="price-feature-item">
+              <i class="fa-solid fa-check"></i>
+              <span>ช่วยเลือกทักษะและกำหนดรูปแบบสินค้า</span>
+            </div>
+            <div class="price-feature-item">
+              <i class="fa-solid fa-check"></i>
+              <span><strong>ดีมติดตั้งระบบให้ทั้งหมด:</strong> Landing Page, เชื่อม Stripe, และระบบส่งอีเมลส่งของอัตโนมัติ</span>
+            </div>
+          </div>
+          
+          <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="border-radius: var(--border-radius-sm);">จองสิทธิ์พูดคุย 1:1 ฟรี →</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-wrapper" style="background-color: #02040A; color-scheme: dark;">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1 -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo-link">
+            <div class="logo-mark">dw</div>
+            <span class="logo-text">d.withdeem</span>
+          </a>
+          <p class="footer-tagline">ระบบการเงิน การลงทุน ชีวิต สำหรับคนธรรมดาที่อยากเริ่มต้นจริงและทำได้อย่างเป็นระบบ</p>
+          <div class="footer-socials">
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://threads.net/@d.withdeem" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Threads">
+              <i class="fa-brands fa-threads"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <h3 class="footer-col-title">Products</h3>
+          <div class="footer-links">
+            <a href="https://financeos-dwithdeem.framer.website/" target="_blank" rel="noopener noreferrer">FinanceOS</a>
+            <a href="https://buy.stripe.com/6oUeV69LS9BIepU0zzcfK05" target="_blank" rel="noopener noreferrer">DCA PlanOS</a>
+            <a href="../stock-deep.html">d.StockDeep <span style="font-size: 0.72rem; color: var(--accent-blue); font-weight: bold; margin-left: 4px;">NEW</span></a>
+            <a href="index.html#invest">InvestClub</a>
+            <a href="#pricing">SoloBrandOS</a>
+            <a href="../dream-agent.html">With Deem Agent <span style="font-size: 0.72rem; color: var(--accent-green); font-weight: bold; margin-left: 4px;">NEW</span></a>
+          </div>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <h3 class="footer-col-title">ฟรี Resources</h3>
+          <div class="footer-links">
+            <a href="https://dwithdeem.notion.site/Starter-Pack-Investment-3354f77e50b4800fa34cd7acacb17ff8" target="_blank" rel="noopener noreferrer">Starter Pack Investment</a>
+            <a href="https://dwithdeem.notion.site/From-Zero-to-Money-System-3254f77e50b4806a99b4dd9221785604" target="_blank" rel="noopener noreferrer">From Zero to Money System</a>
+            <a href="https://dwithdeem.notion.site/Space-Economy-Stocks-E-Book-The-Complete-Guide-2026-2248286daa514d4ab9e8f9d57efa8f4c" target="_blank" rel="noopener noreferrer">Space Economy EBook</a>
+          </div>
+        </div>
+
+        <!-- Col 4 -->
+        <div>
+          <h3 class="footer-col-title">เพิ่มเติม</h3>
+          <div class="footer-links">
+            <a href="index.html#about">เกี่ยวกับดีม</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer">ติดต่อเรา</a>
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer">@d.withdeem</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 d.withdeem. All rights reserved.</p>
+        <span class="footer-motto">USE YOUR 9-5 TO FUND YOUR 5-9</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../app.js"></script>
+</body>
+</html>
