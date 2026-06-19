@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>d.withdeem | ระบบ Notion จัดการเงิน + ลงทุน DCA สำหรับคนทำงาน (v3)</title>
+  <meta name="description" content="FinanceOS · DCA PlanOS · d.StockDeep · InvestClub · SoloBrandOS — คลังระบบและเครื่องมือสำหรับจัดระเบียบการเงินส่วนบุคคลและการลงทุนอย่างมีระบบ เริ่มต้นได้จริง">
+  
+  <!-- OG / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="d.withdeem | ระบบ Notion จัดการเงิน + ลงทุน DCA สำหรับคนทำงาน (v3)">
+  <meta property="og:description" content="FinanceOS · DCA PlanOS · d.StockDeep · InvestClub · SoloBrandOS — คลังระบบและเครื่องมือสำหรับจัดระเบียบการเงินส่วนบุคคลและการลงทุนอย่างมีระบบ เริ่มต้นได้จริง">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%2302040A%22/><rect x=%2220%22 y=%2220%22 width=%2260%22 height=%2260%22 rx=%228%22 fill=%22%2338B6FF%22/><text x=%2250%%22 y=%2255%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Syne,sans-serif%22 font-weight=%22800%22 font-size=%2232%22 fill=%22%2302040A%22>dw</text></svg>">
+
+  <!-- Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Core Stylesheet (Referenced from parent directory) -->
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="../styles.css">
+
+  <!-- v3 Style Overrides to preserve styles.css while applying the new layout structure -->
+  <style>
+    /* 3-Pathway Selector section styling */
+    .paths-section {
+      padding: 60px 24px 80px;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+    .paths-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .paths-title {
+      font-family: var(--font-headings);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .paths-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .path-btn-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      padding: 32px 28px;
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--glass-border);
+      background: var(--bg-card);
+      box-shadow: var(--glass-shadow);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+    }
+    .path-btn-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--glass-shadow-hover);
+      background: var(--bg-card-hover);
+    }
+    .path-btn-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      transition: var(--transition-smooth);
+    }
+    .path-btn-card.money-path::before {
+      background: linear-gradient(90deg, var(--accent-blue), #1D4ED8);
+    }
+    .path-btn-card.invest-path::before {
+      background: linear-gradient(90deg, var(--accent-green), #0891B2);
+    }
+    .path-btn-card.brand-path::before {
+      background: linear-gradient(90deg, var(--accent-purple), #7C3AED);
+    }
+    .path-icon-wrapper {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+    }
+    .money-path .path-icon-wrapper {
+      background: rgba(var(--accent-blue-rgb), 0.1);
+      color: var(--accent-blue);
+    }
+    .invest-path .path-icon-wrapper {
+      background: rgba(var(--accent-green-rgb), 0.1);
+      color: var(--accent-green);
+    }
+    .brand-path .path-icon-wrapper {
+      background: rgba(var(--accent-purple-rgb), 0.1);
+      color: var(--accent-purple);
+    }
+    .path-btn-card h3 {
+      font-family: var(--font-headings);
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+    .path-btn-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+    .path-btn-link {
+      font-family: var(--font-headings);
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition-fast);
+    }
+    .money-path .path-btn-link { color: var(--accent-blue); }
+    .invest-path .path-btn-link { color: var(--accent-green); }
+    .brand-path .path-btn-link { color: var(--accent-purple); }
+
+    .path-btn-card:hover .path-btn-link {
+      gap: 10px;
+    }
+
+    /* Pathway Mini Mockups styling */
+    .path-mini-mockup {
+      width: 100%;
+      height: 140px;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid var(--glass-border-subtle);
+      background-color: rgba(255, 255, 255, 0.03);
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .path-mini-mockup img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .path-btn-card:hover .path-mini-mockup img {
+      transform: scale(1.06) translateY(-2px);
+    }
+
+    /* relocated Premium With Deem Agent Section banner */
+    .agent-banner-section {
+      padding: 0 24px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .agent-banner-card {
+      position: relative;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #0A0F1E, #18233C);
+      border: 1px solid rgba(56, 182, 255, 0.15);
+      padding: 48px;
+      color: #FFFFFF;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+    }
+    .agent-banner-card .blob {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(56, 182, 255, 0.08);
+      filter: blur(50px);
+      top: -100px;
+      right: -100px;
+      pointer-events: none;
+    }
+    .agent-banner-card .blob-2 {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: rgba(168, 85, 247, 0.06);
+      filter: blur(60px);
+      bottom: -80px;
+      left: -80px;
+      pointer-events: none;
+    }
+    .agent-banner-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+    }
+    .agent-banner-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 182, 255, 0.12);
+      color: #38B6FF;
+      border: 1px solid rgba(56, 182, 255, 0.25);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-family: var(--font-headings);
+      margin-bottom: 20px;
+    }
+    .agent-banner-title {
+      font-family: var(--font-headings);
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+      color: #FFFFFF;
+    }
+    .agent-banner-desc {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+    .agent-banner-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .agent-banner-feature-tag {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.9);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .agent-banner-feature-tag i {
+      color: #22C55E;
+    }
+    .agent-banner-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #FFFFFF;
+      color: #0A0F1E;
+      padding: 14px 28px;
+      border-radius: var(--border-radius-sm);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+    .agent-banner-cta:hover {
+      background-color: #E2E8F0;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+    }
+
+    /* Restructured Pathway Product Sections */
+    .pathway-section-wrapper {
+      border-top: 4px solid transparent;
+    }
+    .pathway-section-wrapper.money-pathway {
+      border-color: var(--accent-blue);
+      background: linear-gradient(180deg, rgba(56, 182, 255, 0.02) 0%, transparent 15%);
+    }
+    .pathway-section-wrapper.invest-pathway {
+      border-color: var(--accent-green);
+      background: linear-gradient(180deg, rgba(34, 197, 94, 0.02) 0%, transparent 15%);
+    }
+    .pathway-section-wrapper.brand-pathway {
+      border-color: var(--accent-purple);
+      background: linear-gradient(180deg, rgba(168, 85, 247, 0.02) 0%, transparent 15%);
+    }
+    .pathway-product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 10px;
+    }
+
+    /* Expanded About Section Stats */
+    .about-stats {
+      display: flex;
+      gap: 40px;
+      margin: 32px 0 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--glass-border-subtle);
+    }
+    .about-stat {
+      display: flex;
+      flex-direction: column;
+    }
+    .about-stat .n {
+      font-family: var(--font-headings);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent-blue);
+      line-height: 1;
+    }
+    .about-stat .l {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* Responsive Media Queries overrides */
+    @media (max-width: 991px) {
+      .pathway-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .paths-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .path-btn-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 24px;
+      }
+      .path-icon-wrapper {
+        margin-bottom: 0;
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
+        flex-shrink: 0;
+      }
+      .path-btn-card p {
+        margin-bottom: 8px;
+        font-size: 0.85rem;
+      }
+      .path-btn-card h3 {
+        font-size: 1.15rem;
+        margin-bottom: 4px;
+      }
+      .path-btn-link {
+        font-size: 0.8rem;
+      }
+      
+      .agent-banner-card {
+        padding: 32px 24px;
+        border-radius: 16px;
+      }
+      .agent-banner-title {
+        font-size: 1.6rem;
+      }
+      .agent-banner-desc {
+        font-size: 0.95rem;
+      }
+      .agent-banner-features {
+        gap: 8px;
+      }
+      .agent-banner-feature-tag {
+        padding: 6px 12px;
+        font-size: 0.78rem;
+      }
+      
+      .pathway-product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .about-stats {
+        justify-content: flex-start;
+        gap: 32px;
+      }
+      .about-stat .n {
+        font-size: 1.8rem;
+      }
+      .about-stat .l {
+        font-size: 0.78rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toast Notification Wrapper -->
+  <div id="toast" class="toast-notification">
+    <i class="fa-solid fa-circle-info toast-icon"></i>
+    <span id="toast-message" class="toast-message">แจ้งเตือนระบบ</span>
+  </div>
+
+  <!-- 1. Navigation Bar -->
+  <header class="nav-wrapper">
+    <div class="nav-container">
+      <a href="#" class="logo-link">
+        <div class="logo-mark">dw</div>
+        <span class="logo-text">d.withdeem</span>
+      </a>
+      
+      <nav class="nav-menu">
+        <a href="#paths">เส้นทางที่ใช่</a>
+        <a href="#agent">Agent บริการ</a>
+        <a href="#money">คุมเงิน</a>
+        <a href="#invest">ลงทุน</a>
+        <a href="#income">สร้างรายได้</a>
+        <a href="#about">เกี่ยวกับ</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      
+      <div class="nav-cta">
+        <a href="#paths" class="btn btn-primary">เริ่มต้นฟรี →</a>
+      </div>
+
+      <button class="burger-menu" aria-label="Toggle navigation">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 2. Hero Section -->
+  <div class="section-wrapper bg-main" id="hero">
+    <div class="blob" style="width:600px;height:600px;background:rgba(56,182,255,0.08);top:-150px;right:-200px;"></div>
+    <div class="blob" style="width:400px;height:400px;background:rgba(168,85,247,0.05);bottom:-100px;left:-100px;"></div>
+    <header class="hero-wrapper" style="padding: 120px 24px 60px; position: relative; z-index: 1;">
+      <div class="hero-container" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <div class="hero-badge-wrap" style="display: flex; justify-content: center; margin-bottom: 24px;">
+          <div class="eyebrow-badge blue">
+            <span class="badge-dot"></span>
+            USE YOUR 9-5 TO FUND YOUR 5-9
+          </div>
+        </div>
+        
+        <h1 style="font-family: var(--font-headings); font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.18; margin-bottom: 24px; letter-spacing: -0.01em;">
+          มีระบบการเงิน<br>ก่อนมี<span style="color: var(--accent-blue);"> อิสรภาพทางการเงิน</span>
+        </h1>
+        
+        <p class="hero-subtitle" style="font-size: clamp(1.05rem, 2vw, 1.2rem); color: var(--text-muted); line-height: 1.75; max-width: 680px; margin: 0 auto 36px;">
+          เครื่องมือ ระบบ และคอมมูนิตี้ที่ใช้ได้จริง สำหรับคนทำงานประจำที่อยากเริ่มมี "ระบบ" จัดการกระเป๋าและสินทรัพย์ โดยไม่ต้องเป็นผู้เชี่ยวชาญการเงิน
+        </p>
+        
+        <div class="hero-actions" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px;">
+          <a href="#paths" class="btn btn-primary" style="padding: 14px 28px; font-weight: 600; border-radius: var(--border-radius-sm);">ดูเส้นทางที่ใช่สำหรับคุณ →</a>
+        </div>
+  
+        <div class="stats-bar" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; padding-top: 40px; border-top: 1px solid var(--glass-border-subtle);">
+          <div class="stat-item" style="text-align: center;">
+            <div class="stat-number" data-target="200+">0+</div>
+            <div class="stat-label" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">สมาชิก InvestClub</div>
+          </div>
+          <div class="stat-item" style="text-align: center;">
+            <div class="stat-number" data-target="100+">0+</div>
+            <div class="stat-label" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">คนใช้ระบบ Notion แล้ว</div>
+          </div>
+          <div class="stat-item" style="text-align: center;">
+            <div class="stat-number" data-target="3">0</div>
+            <div class="stat-label" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">E-Book ฟรี ส่งทันที</div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- 3. Trust Bar Section -->
+  <div class="trust-bar-section">
+    <div class="trust-ticker-container">
+      <div class="trust-ticker">
+        <div class="trust-item">
+          <i class="fa-solid fa-cube trust-icon"></i>
+          <span>Notion Workspace พร้อมใช้</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-circle-check trust-icon"></i>
+          <span>ชำระปลอดภัยผ่าน Stripe</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-users trust-icon"></i>
+          <span>สมาชิก InvestClub กว่า 200+</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-bolt trust-icon"></i>
+          <span>ส่งมอบทันทีหลังชำระเงิน</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Pathways Selector Section -->
+  <section class="paths-section" id="paths">
+    <div class="paths-container">
+      <h2 class="paths-title">คุณกำลังมองหาอะไร?</h2>
+      
+      <div class="paths-grid">
+        <!-- Path 1: Money -->
+        <a href="#money" class="path-btn-card money-path">
+          <div class="path-icon-wrapper">
+            <i class="fa-solid fa-wallet"></i>
+          </div>
+          <h3>คุมเงินให้อยู่</h3>
+          <p>จัดระบบรายรับ-รายจ่าย เงินออม เงินสำรองฉุกเฉิน และเห็นภาพกระแสเงินสดรายเดือนอย่างชัดเจนในระบบเดียว</p>
+          <div class="path-mini-mockup">
+            <img src="../img/FinanceOS.png" alt="FinanceOS Mockup">
+          </div>
+          <span class="path-btn-link">เริ่มจาก FinanceOS →</span>
+        </a>
+
+        <!-- Path 2: Invest -->
+        <a href="#invest" class="path-btn-card invest-path">
+          <div class="path-icon-wrapper">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3>ให้เงินทำงาน</h3>
+          <p>เข้าร่วมคอมมูนิตี้นักลงทุนระยะยาว วางระบบ DCA สะสมหุ้น/กองทุน และวิเคราะห์เจาะลึกหุ้น Megatrend</p>
+          <div class="path-mini-mockup">
+            <img src="../img/InvestClub.png" alt="InvestClub Mockup">
+          </div>
+          <span class="path-btn-link">เริ่มจาก InvestClub →</span>
+        </a>
+
+        <!-- Path 3: Income/Brand -->
+        <a href="#income" class="path-btn-card brand-path">
+          <div class="path-icon-wrapper">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <h3>สร้างรายได้เสริม</h3>
+          <p>เปลี่ยนความรู้และตัวตนเป็น Digital Product และเซ็ตอัประบบขายอัตโนมัติ 24 ชั่วโมงโดยไม่กระทบงานหลัก</p>
+          <div class="path-mini-mockup">
+            <img src="../img/SoloBrandOS.png" alt="SoloBrandOS Mockup">
+          </div>
+          <span class="path-btn-link">เริ่มจาก SoloBrandOS →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. With Deem Agent Section ( reloc to Section 2 ) -->
+  <section class="agent-banner-section" id="agent">
+    <div class="agent-banner-card">
+      <div class="blob"></div>
+      <div class="blob-2"></div>
+      <div class="agent-banner-content">
+        <span class="agent-banner-tag">PREMIUM &middot; WITH DEEM AGENT</span>
+        <h3 class="agent-banner-title">ไม่อยากตั้งระบบเอง? ให้ดีมช่วยตั้งให้แบบจับมือทำ</h3>
+        <p class="agent-banner-desc">บริการตั้งค่าระบบธุรกิจดิจิทัลแบบ 1:1 — ดีมเซ็ตอัประบบหลังบ้าน Stripe ชำระเงิน, Notion และระบบส่งมอบสินค้าอัตโนมัติ พร้อมวิดีโอคอลปรับกลยุทธ์ส่วนตัวให้ตรงเป้าหมายคุณ</p>
+        
+        <div class="agent-banner-features">
+          <span class="agent-banner-feature-tag">
+            <i class="fa-solid fa-phone"></i> 1-on-1 Strategy Call
+          </span>
+          <span class="agent-banner-feature-tag">
+            <i class="fa-solid fa-gear"></i> Stripe + Notion Setup
+          </span>
+          <span class="agent-banner-feature-tag">
+            <i class="fa-solid fa-envelope"></i> Email Funnel Automation
+          </span>
+        </div>
+        
+        <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="agent-banner-cta">
+          <i class="fa-regular fa-comments"></i>
+          <span>ปรึกษาฟรี 30 นาที →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Money Pathway Section (เส้นทางคุมเงิน) -->
+  <div class="section-wrapper pathway-section-wrapper money-pathway" id="money">
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-blue);">เส้นทางคุมเงิน</span>
+        <h2 class="section-title">เริ่มฟรี ไปจนถึงระบบเต็ม</h2>
+        <p class="section-subtitle">เซ็ตฐานการเงินให้มั่นคง คุมรายจ่าย จัดสรรเงินออมอย่างเป็นระบบก่อนขยับไปลงทุน</p>
+      </div>
+
+      <div class="pathway-product-grid">
+        <!-- Product 1: From Zero to Money System (Free E-Book) -->
+        <div class="card green-border reveal delay-1">
+          <div class="card-top">
+            <span class="card-badge green">FREE E-BOOK</span>
+            <i class="fa-solid fa-book-open color-green" style="font-size: 1.25rem;"></i>
+          </div>
+          <div class="card-thumbnail-container" style="background: #ffffff;">
+            <img src="../img/From Zero to Money System.png" alt="From Zero to Money System E-Book" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <h3 class="card-title">From Zero to Money System</h3>
+          <div class="card-price color-green">FREE</div>
+          <p class="card-desc">คู่มือเซ็ตอัประบบจัดการเงินส่วนบุคคล จากเริ่มออมเงินฉุกเฉิน ไปจนถึงจัดสัดส่วนเงินแบบอัตโนมัติ เพื่อไม่ให้เงินไหลออกอย่างไร้จุดหมาย</p>
+          <div class="card-actions-1">
+            <a href="https://dwithdeem.notion.site/From-Zero-to-Money-System-3254f77e50b4806a99b4dd9221785604" target="_blank" rel="noopener noreferrer" class="btn btn-green btn-sm" style="width: 100%; justify-content: center;">รับ E-Book ฟรี</a>
+          </div>
+        </div>
+
+        <!-- Product 2: FinanceOS (Best Seller) -->
+        <div class="card blue-border reveal delay-2">
+          <div class="card-top">
+            <span class="card-badge blue">BEST SELLER</span>
+            <i class="fa-solid fa-layer-group color-blue" style="font-size: 1.25rem;"></i>
+          </div>
+          <div class="card-thumbnail-container" style="background: #ffffff;">
+            <img src="../img/FinanceOS.png" alt="FinanceOS Mockup" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <h3 class="card-title">FinanceOS</h3>
+          <div class="card-price color-blue">
+            490 ฿ <span class="card-price-old" style="text-decoration: line-through; opacity: 0.55; margin-left: 8px;">1,490 ฿</span>
+          </div>
+          <p class="card-desc">หยุดถามว่า "เงินหายไปไหนหมด?" — บันทึกรายรับรายจ่าย แยกบัญชีเงินออม-เงินสำรอง-หนี้สิน และเห็นกระแสเงินจริงทุกสิ้นเดือน ทั้งหมดในระบบ Notion เดียว</p>
+          <div class="card-actions-2">
+            <a href="https://financeos-dwithdeem.framer.website/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="justify-content: center;">รายละเอียด</a>
+            <a href="https://buy.stripe.com/5kA6s39u55W98lqaEE" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="justify-content: center;">สั่งซื้อระบบ</a>
+          </div>
+        </div>
+
+        <!-- Product 3: DCA PlanOS -->
+        <div class="card blue-border reveal delay-3">
+          <div class="card-top">
+            <span class="card-badge blue">RECOMMENDED</span>
+            <i class="fa-solid fa-chart-line color-blue" style="font-size: 1.25rem;"></i>
+          </div>
+          <div class="card-thumbnail-container" style="background: #ffffff;">
+            <img src="../img/DCAPLANOS.png" alt="DCA PlanOS Mockup" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <h3 class="card-title">DCA PlanOS</h3>
+          <div class="card-price color-blue">
+            390 ฿ <span class="card-price-old" style="text-decoration: line-through; opacity: 0.55; margin-left: 8px;">790 ฿</span>
+          </div>
+          <p class="card-desc">เซ็ตแผนการลงทุนสะสมหุ้น/กองทุนระยะยาว — คำนวณเป้าหมายความมั่งคั่ง ติดตามผลตอบแทนรวมเฉลี่ย และจัดสัดส่วนพอร์ตสินทรัพย์แบบอัตโนมัติ</p>
+          <div class="card-actions-2">
+            <a href="#" class="btn btn-secondary btn-sm dca-details-trigger" style="justify-content: center;">รายละเอียด</a>
+            <a href="https://buy.stripe.com/6oUeV69LS9BIepU0zzcfK05" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="justify-content: center;">สั่งซื้อระบบ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 7. Invest Pathway Section (เส้นทางลงทุน) -->
+  <div class="section-wrapper pathway-section-wrapper invest-pathway" id="invest">
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-green);">เส้นทางลงทุน</span>
+        <h2 class="section-title">InvestClub & เครื่องมือวิเคราะห์</h2>
+        <p class="section-subtitle">ขยับมาเรียนรู้ร่วมกันในคลับ และใช้เครื่องมือสแกนหุ้นช่วยซัพพอร์ตการตัดสินใจให้ง่ายขึ้น</p>
+      </div>
+
+      <div class="pathway-product-grid">
+        <!-- Product 1: Space Economy Stocks (Free E-Book) -->
+        <div class="card green-border reveal delay-1">
+          <div class="card-top">
+            <span class="card-badge green">FREE E-BOOK</span>
+            <i class="fa-solid fa-book-open color-green" style="font-size: 1.25rem;"></i>
+          </div>
+          <div class="card-thumbnail-container" style="background: #ffffff;">
+            <img src="../img/Space Economy Stocks E-Book.png" alt="Space Economy Stocks E-Book" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <h3 class="card-title">Space Economy Stocks</h3>
+          <div class="card-price color-green">FREE</div>
+          <p class="card-desc">วิเคราะห์เจาะลึก 15 หุ้นในธีมเศรษฐกิจอวกาศ (Space Economy) เจาะงบ โครงสร้างรายได้ และโอกาสการเติบโตรองรับ Megatrend โลกอนาคต</p>
+          <div class="card-actions-1">
+            <a href="https://dwithdeem.notion.site/Space-Economy-Stocks-E-Book-The-Complete-Guide-2026-2248286daa514d4ab9e8f9d57efa8f4c" target="_blank" rel="noopener noreferrer" class="btn btn-green btn-sm" style="width: 100%; justify-content: center;">รับ E-Book ฟรี</a>
+          </div>
+        </div>
+
+        <!-- Product 2: InvestClub -->
+        <div class="card amber-border reveal delay-2">
+          <div class="card-top">
+            <span class="card-badge amber">POPULAR</span>
+            <i class="fa-solid fa-users color-amber" style="font-size: 1.25rem;"></i>
+          </div>
+          <div class="card-thumbnail-container" style="background: #ffffff;">
+            <img src="../img/InvestClub.png" alt="InvestClub Mockup" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <h3 class="card-title">InvestClub</h3>
+          <div class="card-price color-amber">
+            99 ฿ <span style="font-size: 0.9rem; font-weight: 500; opacity: 0.7;">/เดือน</span>
+          </div>
+          <p class="card-desc">คอมมูนิตี้วิเคราะห์หุ้นและพอร์ตการลงทุนระยะยาวรายสัปดาห์ สแกนเนอร์หุ้น Megatrend เทมเพลต Notion ประจำเดือน และกลุ่มไลน์แลกเปลี่ยนกลยุทธ์</p>
+          <div class="card-actions-2">
+            <a href="https://buy.stripe.com/3cI6oA6zG8xEchM5TTcfK0d" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="justify-content: center;">รายปี 990 ฿/ปี</a>
+            <a href="https://buy.stripe.com/28EeV67DKcNU2HcgyxcfK08" target="_blank" rel="noopener noreferrer" class="btn btn-amber btn-sm" style="justify-content: center; color: var(--bg-dark); font-weight: bold;">เข้าคลับรายเดือน</a>
+          </div>
+        </div>
+
+        <!-- Product 3: d.StockDeep -->
+        <div class="card blue-border reveal delay-3">
+          <div class="card-top">
+            <span class="card-badge blue">NEW</span>
+            <i class="fa-solid fa-satellite color-blue" style="font-size: 1.25rem;"></i>
+          </div>
+          <div class="card-thumbnail-container" style="background: #0C0F1A; border: none; overflow: hidden; position: relative;">
+            <div class="stock-mockup">
+              <div class="stock-mockup-header">
+                <span class="stock-mockup-title">🚀 Space Theme</span>
+                <span style="font-size:0.5rem;color:rgba(255,255,255,0.4);">d.StockDeep v5</span>
+              </div>
+              <div class="stock-mockup-row">
+                <span class="stock-mockup-ticker">RKLB</span>
+                <span class="stock-mockup-price">$19.84</span>
+                <span class="stock-mockup-change">+338.2%</span>
+              </div>
+              <div class="stock-mockup-row">
+                <span class="stock-mockup-ticker">ASTS</span>
+                <span class="stock-mockup-price">$10.91</span>
+                <span class="stock-mockup-change">+370.6%</span>
+              </div>
+              <div class="stock-mockup-row" style="border-bottom: none;">
+                <span class="stock-mockup-ticker">PL</span>
+                <span class="stock-mockup-price">$4.98</span>
+                <span class="stock-mockup-change red">-11.2%</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="card-title">d.StockDeep</h3>
+          <div class="card-price color-blue">
+            199 ฿ <span class="card-price-old" style="text-decoration: line-through; opacity: 0.55; margin-left: 8px;">399 ฿</span>
+          </div>
+          <p class="card-desc">สแกนเนอร์หุ้น 144+ ตัวใน 6 ธีม ดึงราคา–MA–Fibonacci อัตโนมัติจาก Google Finance พร้อมแปลสัญญาณเป็นภาษาคน อ่านง่าย ตัดสินใจเร็วขึ้น</p>
+          <div class="card-actions-2">
+            <a href="../stock-deep.html" class="btn btn-secondary btn-sm" style="justify-content: center;">รายละเอียด</a>
+            <a href="https://buy.stripe.com/3cI7sE3nu6pw4Pkaa9cfK0j" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="justify-content: center;">สั่งซื้อเครื่องมือ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 8. Income/Brand Pathway Section (เส้นทางสร้างรายได้) -->
+  <div class="section-wrapper pathway-section-wrapper brand-pathway" id="income">
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-purple);">เส้นทางสร้างรายได้</span>
+        <h2 class="section-title">SoloBrandOS & With Deem Agent</h2>
+        <p class="section-subtitle">สร้างธุรกิจเสริมส่วนบุคคล เปลี่ยนทักษะเป็นสินค้า วางกระบวนการ และให้ดีมช่วยเหลือคุณ</p>
+      </div>
+
+      <div class="pathway-product-grid">
+        <!-- Product 1: Starter Pack Investment (Free E-Book) -->
+        <div class="card green-border reveal delay-1">
+          <div class="card-top">
+            <span class="card-badge green">FREE E-BOOK</span>
+            <i class="fa-solid fa-book-open color-green" style="font-size: 1.25rem;"></i>
+          </div>
+          <div class="card-thumbnail-container" style="background: #ffffff;">
+            <img src="../img/From Zero to Investment.png" alt="Starter Pack Investment E-Book" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <h3 class="card-title">Starter Pack Investment</h3>
+          <div class="card-price color-green">FREE</div>
+          <p class="card-desc">E-Book ปูพื้นฐานการเงินและการลงทุนตั้งต้น สำหรับคนที่ต้องการเปลี่ยนเงินออมให้เริ่มเติบโตในสินทรัพย์ต่างๆ พร้อมเครื่องมือคำนวณเบื้องต้น</p>
+          <div class="card-actions-1">
+            <a href="https://dwithdeem.notion.site/Starter-Pack-Investment-3354f77e50b4800fa34cd7acacb17ff8" target="_blank" rel="noopener noreferrer" class="btn btn-green btn-sm" style="width: 100%; justify-content: center;">รับ E-Book ฟรี</a>
+          </div>
+        </div>
+
+        <!-- Product 2: SoloBrandOS -->
+        <div class="card purple-border card-featured-income reveal delay-2" style="position: relative;">
+          <div class="card-top" style="position: relative; z-index: 2;">
+            <span class="card-badge purple">POPULAR</span>
+            <i class="fa-solid fa-bolt color-purple" style="font-size: 1.25rem;"></i>
+          </div>
+          <div class="card-thumbnail-container" style="background: #ffffff; position: relative; z-index: 2;">
+            <img src="../img/SoloBrandOS.png" alt="SoloBrandOS Mockup" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <h3 class="card-title" style="position: relative; z-index: 2;">SoloBrandOS</h3>
+          <div class="card-price color-purple" style="position: relative; z-index: 2;">
+            1,490 ฿ <span class="card-price-old" style="text-decoration: line-through; opacity: 0.55; margin-left: 8px;">4,900 ฿</span>
+          </div>
+          <p class="card-desc" style="position: relative; z-index: 2;">คอร์สเรียน + ระบบสร้างแบรนด์ตัวตนและธุรกิจดิจิทัลสำหรับคนทำงาน — ตั้งแต่การหาไอเดียสร้าง Content, วางระบบการขายอัตโนมัติ ไปจนถึงเทมเพลตจัดการงานและสถิติยอดขาย</p>
+          <div class="card-actions-2" style="position: relative; z-index: 2;">
+            <a href="solobrandos.html" class="btn btn-secondary btn-sm" style="justify-content: center;">รายละเอียด</a>
+            <a href="https://buy.stripe.com/aFabIU1fm29g5Toaa9cfK0c" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="justify-content: center; background: var(--accent-purple); color: #ffffff; border-color: var(--accent-purple);">สั่งซื้อคอร์ส</a>
+          </div>
+        </div>
+
+        <!-- Product 3: With Deem Agent (Setup Service) -->
+        <div class="card green-border reveal delay-3">
+          <div class="card-top">
+            <span class="card-badge green" style="background: rgba(34, 197, 94, 0.1); color: var(--accent-green); padding: 4px 10px; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">AGENCY SERVICE</span>
+            <i class="fa-solid fa-handshake color-green" style="font-size: 1.25rem;"></i>
+          </div>
+          <div class="card-thumbnail-container" style="background: #ffffff;">
+            <img src="../img/WithDeemAgent.png" alt="Withdeem Agency Setup Service Mockup" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <h3 class="card-title">With Deem Agent</h3>
+          <div class="card-price color-green">ปรึกษาฟรี 30 นาที</div>
+          <p class="card-desc">บริการตั้งค่าระบบธุรกิจดิจิทัล 1:1 — ดีมเซ็ตอัประบบหลังบ้าน Stripe, Notion และ Email Automation เพื่อส่งมอบสินค้าอัตโนมัติพร้อมปรับแผนกลยุทธ์</p>
+          <div class="card-actions-2">
+            <a href="../dream-agent.html" class="btn btn-secondary btn-sm" style="justify-content: center;">รายละเอียด</a>
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="justify-content: center; background: var(--accent-green); color: #02040A; border-color: var(--accent-green); font-weight: bold;">ทักคุยรายละเอียด</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 9. Expanded About Deem Section -->
+  <div class="section-wrapper bg-main" id="about">
+    <div class="blob" style="width:400px;height:400px;background:rgba(56,182,255,0.04);top:10%;right:-100px;"></div>
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-blue);">เกี่ยวกับผู้สร้าง</span>
+        <h2 class="section-title">คนที่อยู่เบื้องหลัง d.withdeem</h2>
+        <p class="section-subtitle">รู้ความตั้งใจและเหตุผลที่เราทำระบบเครื่องมือเหล่านี้ออกมา</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left Side: Beautiful Photo with badge -->
+        <div class="about-left reveal delay-1">
+          <div class="about-image-container">
+            <div class="about-image-gradient"></div>
+            <img src="../img/Deem.jpg" alt="ชลสิทธิ์ รักษาชล (ดีม)" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="about-photo-badge">Solo Creator</div>
+          </div>
+        </div>
+        
+        <!-- Right Side: Text, quote, stats, and socials -->
+        <div class="about-right reveal delay-2">
+          <span class="about-name-mono">CHONLASIT "DEEM" RAKSACHON</span>
+          <h2 class="about-name">ชลสิทธิ์ รักษาชล (ดีม)</h2>
+          
+          <div class="about-quote-container">
+            <blockquote class="about-quote">
+              "เงินเดือนไม่ได้ผิด แค่ต้องมีระบบ — ระบบสำคัญกว่าความรู้สึก"
+            </blockquote>
+          </div>
+
+          <div class="about-bio">
+            <p>ผมเป็นผู้พัฒนาที่ใช้เวลาว่างหลังงานประจำในการสร้างและพัฒนาธุรกิจดิจิทัลส่วนตัว</p>
+            <p>เริ่มต้นจากการเป็นคนที่ไม่เข้าใจเรื่องการบริหารเงินส่วนบุคคล ไม่มีระบบระเบียบ อาศัยแต่การลงทุนเดาสุ่ม จนกระทั่งค้นพบคีย์สำคัญในการพัฒนาระบบการเงินที่ทำงานแทนเราได้อย่างอัตโนมัติ ตลอดจนมีพอร์ตการลงทุนจริง และสร้างรายได้เสริมจาก Digital Products ต่างๆ ได้โดยไม่ส่งผลกระทบต่องานหลัก</p>
+            <p>ทุกระบบ ทุกคู่มือ และชุดข้อมูลที่ผมแบ่งปันผ่านทาง d.withdeem เป็นสิ่งที่ผมออกแบบ ทดลอง และใช้งานคุมกระเป๋าตัวเองจริงอยู่ในทุกๆ วัน</p>
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="n">200+</span>
+              <span class="l">สมาชิก InvestClub</span>
+            </div>
+            <div class="about-stat">
+              <span class="n">3+</span>
+              <span class="l">ระบบ Notion ใช้งานจริง</span>
+            </div>
+          </div>
+
+          <div class="about-socials">
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="about-social-btn">
+              <i class="fa-brands fa-instagram color-blue"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="https://threads.net/@d.withdeem" target="_blank" rel="noopener noreferrer" class="about-social-btn">
+              <i class="fa-brands fa-square-threads color-blue"></i>
+              <span>Threads</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 10. Social Proof Testimonials Section -->
+  <div class="section-wrapper bg-alt" id="proof">
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow">ผลลัพธ์จริง</span>
+        <h2 class="section-title">จาก community ที่ใช้ระบบจริง</h2>
+        <p class="section-subtitle">ความรู้สึกและข้อความจริงจากผู้ใช้งานจริงในระบบ</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Card 1 -->
+        <div class="testimonial-card reveal delay-1">
+          <div class="testimonial-header">
+            <span class="testimonial-product-tag blue">FinanceOS</span>
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="testimonial-quote">
+            "ใช้ FinanceOS มาสองเดือน ตอนนี้รู้ว่าเงินไปไหนทุกบาทแล้ว ก่อนหน้านี้เงินหายไปทุกเดือนแบบไม่รู้เรื่อง สะดวกและใช้ทำงานได้จริงมากค่ะ"
+          </p>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar-fallback"><i class="fa-solid fa-user"></i></div>
+            <div>
+              <h4 class="testimonial-name">สมาชิก InvestClub</h4>
+              <p class="testimonial-role">พนักงานบริษัทเอกชน</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="testimonial-card reveal delay-2">
+          <div class="testimonial-header">
+            <span class="testimonial-product-tag amber">InvestClub</span>
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="testimonial-quote">
+            "DCA plan ทำให้ผมลงทุนต่อเนื่องมาได้ 6 เดือนโดยไม่เคยข้าม ก่อนหน้านี้ลงทุนแบบเดาสุ่มสลับหยุดๆ มาตลอด ตอนนี้เข้าใจตลาดและตั้งเป้าหมายถูกแล้วครับ"
+          </p>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar-fallback"><i class="fa-solid fa-user-shield"></i></div>
+            <div>
+              <h4 class="testimonial-name">สมาชิก InvestClub</h4>
+              <p class="testimonial-role">ข้าราชการ</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="testimonial-card reveal delay-3">
+          <div class="testimonial-header">
+            <span class="testimonial-product-tag purple">SoloBrandOS</span>
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="testimonial-quote">
+            "SoloBrandOS ทำให้ผมเปิดขายสินค้าแรกของตัวเองได้ภายในเวลาเพียง 3 อาทิตย์ สอนเข้าใจง่าย มีครบตั้งแต่การจัดวาง Landing Page ยันระบบ Payment"
+          </p>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar-fallback"><i class="fa-solid fa-user-astronaut"></i></div>
+            <div>
+              <h4 class="testimonial-name">ลูกค้า SoloBrandOS</h4>
+              <p class="testimonial-role">Solo Creator</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 11. FAQ Section -->
+  <div class="section-wrapper bg-main" id="faq">
+    <section class="section">
+      <div class="faq-grid">
+        <div class="faq-left">
+          <div class="section-header left-align">
+            <span class="section-eyebrow">คำถามที่พบบ่อย</span>
+            <h2 class="section-title" style="font-size: 2.2rem;">มีข้อสงสัย?</h2>
+            <p class="section-subtitle">ถ้าคุณยังมีคำถามคาใจเรื่อง Notion, ลิงก์ Stripe หรือสินค้าเสริม สามารถทักมาสอบถามดีมได้โดยตรงตลอดเวลาครับ</p>
+          </div>
+          <div>
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 14px 28px; font-weight: 600; border-radius: var(--border-radius-sm);">
+              <i class="fa-brands fa-instagram color-blue" style="margin-right: 8px;"></i>
+              <span>DM ที่ @d.withdeem</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="faq-accordions">
+          <!-- Q1 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-question">Q1: FinanceOS กับ DCA PlanOS ต่างกันยังไง?</h3>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-body" style="padding: 20px 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
+                <strong>FinanceOS</strong> ช่วยจัดระบบเงินเดือนและกระแสเงินสดรายเดือนของคุณ (บันทึกรายรับ รายจ่าย วางแผนเงินออม เงินสำรอง) เพื่อคุมระเบียบการเงินส่วนบุคคล<br><br>ส่วน <strong>DCA PlanOS</strong> จะเน้นช่วยวางแผน จัดพอร์ตการลงทุน และกำหนดงบ DCA ในการสะสมซื้อหุ้น กองทุน ในแต่ละเดือนอย่างเป็นระบบ โดยใช้โมเดลคำนวณและวิเคราะห์พอร์ตสินทรัพย์แบบมีประสิทธิภาพ
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-question">Q2: InvestClub เหมาะกับมือใหม่มั้ย?</h3>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-body" style="padding: 20px 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
+                เหมาะมากครับ! ในคอมมูนิตี้ของเรามีการเรียบเรียงเนื้อหาจากง่ายไปยาก มีการวิเคราะห์และสรุปประเด็นข่าวที่เข้าใจยากให้ออกมาเป็นภาษาพูดปกติที่ทุกคนเข้าใจได้ทันที โดยไม่มีการใช้ศัพท์เทคนิคแปลกๆ โดยไม่จำเป็น เน้นให้คุณนำไปประกอบการตัดสินใจ (Decision Support) ได้จริง
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-question">Q3: ซื้อสินค้าแล้วได้รับยังไง?</h3>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-body" style="padding: 20px 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
+                หลังจากชำระเงินผ่านระบบความปลอดภัยสูงของ <strong>Stripe</strong> เสร็จสิ้น คุณจะได้รับลิงก์เข้าดาวน์โหลดหรือ Duplicate ตัว Notion Template ทันทีผ่านทางหน้าขอบคุณและอีเมลยืนยันการสั่งซื้อ โดยไม่ต้องรอการยืนยันจากแอดมิน ส่วนสมาชิก InvestClub จะได้รับอีเมลเชิญเข้ากลุ่มคอมมูนิตี้หลังได้รับการประมวลผลภายใน 24 ชั่วโมงครับ
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-question">Q4: SoloBrandOS ต้องมีพื้นฐานก่อนมั้ย?</h3>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-body" style="padding: 20px 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
+                ไม่จำเป็นต้องมีพื้นฐานด้านการโค้ดหรือการตลาดยากๆ มาก่อนเลยครับ ตัวคอร์สและระบบถูกออกแบบมาให้ปูรากฐานตั้งแต่ศูนย์ สอนวิธีค้นหาคุณค่าในตัวเอง จับคู่เป็นตัวสินค้าดิจิทัล ออกแบบหน้าเว็บเพจ ตลอดจนผูกระบบชำระเงิน Stripe เพื่อส่งสินค้าอัตโนมัติ คุณเพียงแค่ทำตามคู่มือทีละขั้นตอนเท่านั้น
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 12. Final CTA Banner -->
+  <div class="section-wrapper bg-dark cta-wrapper" style="background-color: var(--bg-dark); color-scheme: dark;">
+    <section class="section cta-banner-section" id="cta">
+      <div class="cta-banner-container" style="text-align: center; max-width: 700px; margin: 0 auto; padding: 40px 24px;">
+        <span class="cta-banner-eyebrow" style="font-family: var(--font-headings); font-size: 0.75rem; font-weight: 700; color: var(--accent-blue); letter-spacing: 0.05em; text-transform: uppercase;">FREE 20 MINUTES CALL</span>
+        <h2 class="cta-banner-title" style="font-family: var(--font-headings); font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.2; margin: 16px 0 20px;">ยังไม่รู้จะเริ่มจากตรงไหน?</h2>
+        <p class="cta-banner-sub" style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 32px;">
+          ยังไม่แน่ใจว่าสถานะทางการเงินหรือเป้าหมายแบบคุณควรเริ่มต้นจากระบบตัวไหนก่อน? ปรึกษากับดีมเป็นการส่วนตัวผ่านทางวิดีโอคอลฟรี 20 นาทีเต็ม ดีมจะวิเคราะห์และแนะนำแนวทางที่เหมาะที่สุดให้คุณทันที
+        </p>
+        <div>
+          <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 14px 28px; font-weight: 600; border-radius: var(--border-radius-sm);">
+            <i class="fa-regular fa-calendar-days" style="margin-right: 8px;"></i>
+            <span>จองคุย 20 นาที — ฟรี →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 13. Footer -->
+  <footer class="footer-wrapper" style="background-color: #02040A; color-scheme: dark;">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1 -->
+        <div class="footer-brand">
+          <a href="#" class="logo-link">
+            <div class="logo-mark">dw</div>
+            <span class="logo-text">d.withdeem</span>
+          </a>
+          <p class="footer-tagline">ระบบการเงิน การลงทุน ชีวิต สำหรับคนธรรมดาที่อยากเริ่มต้นจริงและทำได้อย่างเป็นระบบ</p>
+          <div class="footer-socials">
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://threads.net/@d.withdeem" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Threads">
+              <i class="fa-brands fa-threads"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <h3 class="footer-col-title">Products</h3>
+          <div class="footer-links">
+            <a href="https://financeos-dwithdeem.framer.website/" target="_blank" rel="noopener noreferrer">FinanceOS</a>
+            <a href="https://buy.stripe.com/6oUeV69LS9BIepU0zzcfK05" target="_blank" rel="noopener noreferrer">DCA PlanOS</a>
+            <a href="../stock-deep.html">d.StockDeep <span style="font-size: 0.72rem; color: var(--accent-blue); font-weight: bold; margin-left: 4px;">NEW</span></a>
+            <a href="#invest">InvestClub</a>
+            <a href="solobrandos.html">SoloBrandOS</a>
+            <a href="../dream-agent.html">With Deem Agent <span style="font-size: 0.72rem; color: var(--accent-green); font-weight: bold; margin-left: 4px;">NEW</span></a>
+          </div>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <h3 class="footer-col-title">ฟรี Resources</h3>
+          <div class="footer-links">
+            <a href="https://dwithdeem.notion.site/Starter-Pack-Investment-3354f77e50b4800fa34cd7acacb17ff8" target="_blank" rel="noopener noreferrer">Starter Pack Investment</a>
+            <a href="https://dwithdeem.notion.site/From-Zero-to-Money-System-3254f77e50b4806a99b4dd9221785604" target="_blank" rel="noopener noreferrer">From Zero to Money System</a>
+            <a href="https://dwithdeem.notion.site/Space-Economy-Stocks-E-Book-The-Complete-Guide-2026-2248286daa514d4ab9e8f9d57efa8f4c" target="_blank" rel="noopener noreferrer">Space Economy EBook</a>
+          </div>
+        </div>
+
+        <!-- Col 4 -->
+        <div>
+          <h3 class="footer-col-title">เพิ่มเติม</h3>
+          <div class="footer-links">
+            <a href="#about">เกี่ยวกับดีม</a>
+            <a href="#faq">FAQ</a>
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer">ติดต่อเรา</a>
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer">@d.withdeem</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 d.withdeem. All rights reserved.</p>
+        <span class="footer-motto">USE YOUR 9-5 TO FUND YOUR 5-9</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../app.js"></script>
+</body>
+</html>
