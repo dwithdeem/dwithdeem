@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>Withdeem.agency | เปลี่ยนไอเดีย ความรู้ หรือสินค้า ให้กลายเป็นสินค้าออนไลน์พร้อมระบบเริ่มขาย</title>
+  <meta name="description" content="บริการช่วยคนที่มีไอเดีย ความรู้ หรือสินค้าที่มีอยู่แล้ว ให้กลายเป็นสินค้าออนไลน์ หน้าเว็บ ระบบรับออเดอร์ ระบบส่งมอบ และฐานข้อมูลลูกค้าเบื้องต้น โดย d.withdeem">
+  
+  <!-- OG / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Withdeem.agency | เปลี่ยนไอเดีย ความรู้ หรือสินค้า ให้เป็นสินค้าออนไลน์พร้อมระบบเริ่มขาย">
+  <meta property="og:description" content="บริการช่วยคนที่มีไอเดีย ความรู้ หรือสินค้าที่มีอยู่แล้ว ให้กลายเป็นสินค้าออนไลน์ หน้าเว็บ ระบบรับออเดอร์ ระบบส่งมอบ และฐานข้อมูลลูกค้าเบื้องต้น โดย d.withdeem">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%2302040A%22/><rect x=%2220%22 y=%2220%22 width=%2260%22 height=%2260%22 rx=%228%22 fill=%22%2322C55E%22/><text x=%2250%%22 y=%2255%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Syne,sans-serif%22 font-weight=%22800%22 font-size=%2232%22 fill=%22%2302040A%22>dw</text></svg>">
+
+  <!-- Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Toast Notification Wrapper -->
+  <div id="toast" class="toast-notification">
+    <i class="fa-solid fa-circle-info toast-icon"></i>
+    <span id="toast-message" class="toast-message">แจ้งเตือนระบบ</span>
+  </div>
+
+  <!-- 1. Navigation Bar -->
+  <header class="nav-wrapper">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link">
+        <div class="logo-mark" style="background: var(--accent-green);">dw</div>
+        <span class="logo-text">Withdeem.agency</span>
+      </a>
+      
+      <nav class="nav-menu">
+        <a href="index.html">หน้าแรก</a>
+        <a href="#about-service">เกี่ยวกับบริการ</a>
+        <a href="#process">ขั้นตอนการทำงาน</a>
+        <a href="#pricing">แพ็กเกจราคา</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      
+      <div class="nav-cta">
+        <a href="#pricing" class="btn btn-primary" style="background: var(--accent-green); color: #02040A; border-color: var(--accent-green);">ดูราคาแพ็กเกจ →</a>
+      </div>
+
+      <button class="burger-menu" aria-label="Toggle navigation">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 2. Hero Section -->
+  <div class="section-wrapper bg-main" id="hero">
+    <div class="blob" style="width:600px;height:600px;background:rgba(34,197,94,0.08);top:-150px;right:-200px;"></div>
+    <div class="blob" style="width:400px;height:400px;background:rgba(56,182,255,0.05);bottom:-100px;left:-100px;"></div>
+    <header class="hero-wrapper" style="padding: 120px 24px 80px; position: relative; z-index: 1;">
+      <div class="hero-container" style="max-width: 850px; margin: 0 auto; text-align: center;">
+        <div class="hero-badge-wrap" style="display: flex; justify-content: center; margin-bottom: 24px;">
+          <div class="eyebrow-badge green">
+            <span class="badge-dot" style="background-color: var(--accent-green); box-shadow: 0 0 8px var(--accent-green);"></span>
+            NEW SERVICE &middot; WITHDEEM.AGENCY
+          </div>
+        </div>
+        
+        <h1 style="font-family: var(--font-headings); font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; line-height: 1.2; margin-bottom: 24px;">
+          เปลี่ยนไอเดีย ความรู้ หรือสินค้าที่มี<br>
+          ให้กลายเป็น<span style="color: var(--accent-green);">สินค้าออนไลน์ พร้อมระบบเริ่มขายที่ใช้งานได้จริง</span>
+        </h1>
+        
+        <p class="hero-subtitle" style="font-size: clamp(1.05rem, 2vw, 1.2rem); color: var(--text-muted); line-height: 1.75; max-width: 720px; margin: 0 auto 36px;">
+          ดีมช่วยวางสินค้า หน้าเว็บ ระบบรับออเดอร์ ระบบส่งมอบ และฐานข้อมูลลูกค้าเบื้องต้น เหมาะสำหรับคนที่อยากเริ่มขายสินค้าออนไลน์แบบไม่ต้องงมเองตั้งแต่ศูนย์
+        </p>
+        
+        <div class="hero-actions" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px;">
+          <a href="#pricing" class="btn btn-primary" style="background: var(--accent-green); color: #02040A; border-color: var(--accent-green); padding: 14px 28px; font-weight: 600; border-radius: var(--border-radius-sm);">ดูแพ็กเกจบริการ →</a>
+          <a href="#pricing" class="btn btn-secondary" style="padding: 14px 28px; font-weight: 600; border-radius: var(--border-radius-sm);">คุย Consult กับดีม</a>
+        </div>
+ 
+        <div class="stats-bar" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; padding-top: 40px; border-top: 1px solid var(--glass-border-subtle);">
+          <div class="stat-item" style="text-align: center;">
+            <div class="stat-number" data-target="1-on-1" style="font-family: var(--font-mono); font-size: 1.9rem; font-weight: 700; color: var(--text-main);">1-on-1</div>
+            <div class="stat-label" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">คุยวางทางและจุดเริ่ม</div>
+          </div>
+          <div class="stat-item" style="text-align: center;">
+            <div class="stat-number" data-target="1 สินค้า" style="font-family: var(--font-mono); font-size: 1.9rem; font-weight: 700; color: var(--text-main);">0 สินค้า</div>
+            <div class="stat-label" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">สร้างไฟล์สินค้าพร้อมใช้</div>
+          </div>
+          <div class="stat-item" style="text-align: center;">
+            <div class="stat-number" data-target="1 หน้าเว็บ" style="font-family: var(--font-mono); font-size: 1.9rem; font-weight: 700; color: var(--text-main);">0 หน้าเว็บ</div>
+            <div class="stat-label" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">หน้าขายและระบบรับเงิน</div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- 3. Problem Section -->
+  <div class="section-wrapper bg-alt" id="about-service">
+    <div class="blob" style="width:500px;height:500px;background:rgba(34,197,94,0.03);top:20%;left:-250px;"></div>
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-green);">ทำไมหลายคนยังเริ่มขายไม่ได้</span>
+        <h2 class="section-title">มีความรู้ มีไอเดีย หรือมีสินค้าแล้ว แต่ยังเริ่มขายไม่ได้ เพราะทุกอย่างยังไม่เป็นระบบ</h2>
+      </div>
+
+      <div class="card-grid">
+        <!-- Card 1 -->
+        <div class="card green-border">
+          <div class="card-top">
+            <span class="card-badge green" style="background: rgba(34,197,94,0.1); color: var(--accent-green);">START POINT</span>
+            <i class="fa-solid fa-route color-green" style="font-size: 1.25rem;"></i>
+          </div>
+          <h3 class="card-title" style="min-height: auto; margin-bottom: 8px;">ไม่รู้จะเริ่มจากอะไรก่อน</h3>
+          <p class="card-desc">มีไอเดียเต็มหัว มีประสบการณ์มากมาย แต่ยังไม่รู้ว่าจะกลั่นกรองและทำออกมาเป็น E-book, Template, Guide หรือสินค้าออนไลน์แบบไหนดี</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card green-border">
+          <div class="card-top">
+            <span class="card-badge green" style="background: rgba(34,197,94,0.1); color: var(--accent-green);">MANUAL SALES</span>
+            <i class="fa-solid fa-envelope-open-text color-green" style="font-size: 1.25rem;"></i>
+          </div>
+          <h3 class="card-title" style="min-height: auto; margin-bottom: 8px;">มีสินค้าแล้ว แต่ยังขายแบบ Manual</h3>
+          <p class="card-desc">ต้องคอยตอบแชทลูกค้าเอง ส่งไฟล์เองแบบแมนนวล คอยเก็บข้อมูลการโอนเงินเอง และยังไม่มีระบบส่งมอบที่เป็นมาตรฐานและชัดเจน</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card green-border">
+          <div class="card-top">
+            <span class="card-badge green" style="background: rgba(34,197,94,0.1); color: var(--accent-green);">TIME SAVING</span>
+            <i class="fa-solid fa-hourglass-half color-green" style="font-size: 1.25rem;"></i>
+          </div>
+          <h3 class="card-title" style="min-height: auto; margin-bottom: 8px;">ไม่อยากเสียเวลางมเครื่องมือเอง</h3>
+          <p class="card-desc">ไม่อยากเสียเวลาและพลังงานไปกับการลองผิดลองถูก ตั้งค่าหน้าเว็บ เชื่อมระบบรับเงิน สร้างฟอร์ม หรือทำฐานข้อมูลลูกค้าด้วยตัวเอง</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 4. Solution Section -->
+  <div class="section-wrapper bg-main" id="solution" style="border-top: 1px solid var(--glass-border-subtle);">
+    <div class="blob" style="width:450px;height:450px;background:rgba(34,197,94,0.04);bottom:10%;left:-100px;"></div>
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-green);">ผลลัพธ์ที่จะได้รับ</span>
+        <h2 class="section-title">สิ่งที่ดีมช่วยวางให้</h2>
+        <p class="section-subtitle">ไม่ใช่เพียงแค่เครื่องมือ แต่เป็นระบบเริ่มขายจริงอย่างเป็นขั้นตอน</p>
+      </div>
+
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-bottom: 40px;">
+        <div class="card green-border" style="padding: 24px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <i class="fa-solid fa-file-invoice color-green" style="font-size: 1.3rem;"></i>
+            <h4 style="font-family: var(--font-headings); font-weight: 700;">สินค้า 1 ชิ้นที่จับต้องได้</h4>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">แปลงความรู้ ประสบการณ์ หรือหัวข้อไอเดียของคุณให้ออกมาเป็นรูปเล่ม E-book, เทมเพลต หรือไกด์ไลน์พร้อมส่งมอบ</p>
+        </div>
+
+        <div class="card green-border" style="padding: 24px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <i class="fa-solid fa-window-maximize color-green" style="font-size: 1.3rem;"></i>
+            <h4 style="font-family: var(--font-headings); font-weight: 700;">หน้าเว็บสำหรับโปรโมต</h4>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">หน้า Landing Page สำหรับใช้นำเสนอข้อมูลสินค้า แนะนำแบรนด์ตัวตนของคุณ และดึงดูดลูกค้าให้เข้ามาสั่งซื้อ</p>
+        </div>
+
+        <div class="card green-border" style="padding: 24px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <i class="fa-solid fa-credit-card color-green" style="font-size: 1.3rem;"></i>
+            <h4 style="font-family: var(--font-headings); font-weight: 700;">ระบบรับออเดอร์ / รับเงิน</h4>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">ตั้งค่าช่องทางชำระเงินหรือปุ่มรับออเดอร์ เพื่อให้กระบวนการจ่ายเงินของลูกค้าเสร็จสิ้นได้อย่างสะดวก</p>
+        </div>
+
+        <div class="card green-border" style="padding: 24px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <i class="fa-solid fa-paper-plane color-green" style="font-size: 1.3rem;"></i>
+            <h4 style="font-family: var(--font-headings); font-weight: 700;">ระบบส่งมอบสินค้า</h4>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">เชื่อมต่อระบบจัดเก็บไฟล์ส่งมอบ หรือส่งอีเมลบรรจุสินค้าให้ผู้ซื้อโดยอัตโนมัติหลังจากมีการชำระเงินเรียบร้อย</p>
+        </div>
+
+        <div class="card green-border" style="padding: 24px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <i class="fa-solid fa-database color-green" style="font-size: 1.3rem;"></i>
+            <h4 style="font-family: var(--font-headings); font-weight: 700;">ฐานข้อมูลลูกค้าเบื้องต้น</h4>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">จัดทำระบบบันทึกรายชื่อ (เช่น Notion หรือ Google Sheet) เพื่อจัดระเบียบข้อมูลประวัติลูกค้าและใช้วิเคราะห์ต่อยอด</p>
+        </div>
+
+        <div class="card green-border" style="padding: 24px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <i class="fa-solid fa-circle-question color-green" style="font-size: 1.3rem;"></i>
+            <h4 style="font-family: var(--font-headings); font-weight: 700;">คู่มือใช้งานพื้นฐาน</h4>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">คลิปแนะนำสั้นๆ หรือเอกสารการสอนแก้รายละเอียด ปรับเปลี่ยนสินค้า หรือวิธีตรวจสอบรายการสั่งซื้อด้วยตัวเอง</p>
+        </div>
+
+        <div class="card green-border" style="padding: 24px; grid-column: span 1;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <i class="fa-solid fa-user-shield color-green" style="font-size: 1.3rem;"></i>
+            <h4 style="font-family: var(--font-headings); font-weight: 700;">สอนใช้และดูแลต่อ 30 วัน</h4>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">การสอนทำสั้นๆ แบบจับมือทำพร้อมทีมดูแลช่วยประเมินผลระบบและแก้ไขข้อขัดข้องในช่วงเปิดตัวแรกเริ่ม</p>
+        </div>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto; padding: 24px; border-radius: var(--border-radius-lg); background: rgba(34, 197, 94, 0.05); border: 1px dashed rgba(34, 197, 94, 0.2); text-align: center; font-weight: 600; font-size: 1.05rem; line-height: 1.6;">
+        💡 คุณไม่ได้แค่ได้ไฟล์สินค้า แต่ได้ระบบเริ่มต้นที่ช่วยให้สินค้าเริ่มถูกนำไปขาย ส่งมอบ และจัดการลูกค้าได้เป็นระบบมากขึ้น
+      </div>
+    </section>
+  </div>
+
+  <!-- 4.1. Process Section -->
+  <div class="section-wrapper bg-alt" id="process">
+    <div class="blob" style="width:450px;height:450px;background:rgba(56,182,255,0.04);bottom:10%;right:-100px;"></div>
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-green);">5 ขั้นตอนการทำงาน</span>
+        <h2 class="section-title">ขั้นตอนการทำงานกับดีม</h2>
+        <p class="section-subtitle">ดีมช่วยวางโครงสร้างระบบตั้งแต่ต้นจนจบ เพื่อแปลงแนวคิดของคุณออกมาเป็นสิ่งขายได้จริง</p>
+      </div>
+
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="card green-border">
+          <div class="card-top">
+            <span class="card-badge green" style="border-radius:50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: bold; background: rgba(34,197,94,0.1); color: var(--accent-green);">1</span>
+            <i class="fa-solid fa-comments color-green" style="font-size: 1.25rem;"></i>
+          </div>
+          <h3 class="card-title" style="min-height: auto; margin-bottom: 8px;">1. คุยและวางทาง</h3>
+          <p class="card-desc" style="font-size: 0.85rem;">ดูว่าลูกค้าอยู่จุดไหน มีไอเดีย มีสินค้า หรือมีระบบบางส่วนแล้ว เพื่อกำหนดทิศทางงานร่วมกันอย่างประหยัดงบ</p>
+        </div>
+
+        <div class="card green-border">
+          <div class="card-top">
+            <span class="card-badge green" style="border-radius:50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: bold; background: rgba(34,197,94,0.1); color: var(--accent-green);">2</span>
+            <i class="fa-solid fa-file-pen color-green" style="font-size: 1.25rem;"></i>
+          </div>
+          <h3 class="card-title" style="min-height: auto; margin-bottom: 8px;">2. สร้างสินค้า</h3>
+          <p class="card-desc" style="font-size: 0.85rem;">ช่วยเรียบเรียงและปรับไอเดีย ความรู้ หรือโครงสร้างประสบการณ์ของคุณออกมาเป็นสินค้าสำเร็จ 1 ชิ้นพร้อมนำเสนอ</p>
+        </div>
+
+        <div class="card green-border">
+          <div class="card-top">
+            <span class="card-badge green" style="border-radius:50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: bold; background: rgba(34,197,94,0.1); color: var(--accent-green);">3</span>
+            <i class="fa-solid fa-screwdriver-wrench color-green" style="font-size: 1.25rem;"></i>
+          </div>
+          <h3 class="card-title" style="min-height: auto; margin-bottom: 8px;">3. วางระบบขาย</h3>
+          <p class="card-desc" style="font-size: 0.85rem;">วาง Flow สั่งซื้อ หน้าขาย ระบบรับเงิน ส่งมอบไฟล์อัตโนมัติ และเซ็ตฐานข้อมูลเก็บสถิติลูกค้าอย่างมีระบบระเบียบ</p>
+        </div>
+
+        <div class="card green-border">
+          <div class="card-top">
+            <span class="card-badge green" style="border-radius:50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: bold; background: rgba(34,197,94,0.1); color: var(--accent-green);">4</span>
+            <i class="fa-solid fa-circle-check color-green" style="font-size: 1.25rem;"></i>
+          </div>
+          <h3 class="card-title" style="min-height: auto; margin-bottom: 8px;">4. เปิดใช้งานจริง</h3>
+          <p class="card-desc" style="font-size: 0.85rem;">ทดลองชำระเงินจำลองเพื่อตรวจความถูกต้องของ ลิงก์ หน้าเว็บ อีเมลส่งสินค้า และฐานข้อมูลลูกค้าก่อนส่งมอบ</p>
+        </div>
+
+        <div class="card green-border">
+          <div class="card-top">
+            <span class="card-badge green" style="border-radius:50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: bold; background: rgba(34,197,94,0.1); color: var(--accent-green);">5</span>
+            <i class="fa-solid fa-graduation-cap color-green" style="font-size: 1.25rem;"></i>
+          </div>
+          <h3 class="card-title" style="min-height: auto; margin-bottom: 8px;">5. สอนใช้และต่อยอด</h3>
+          <p class="card-desc" style="font-size: 0.85rem;">ส่งมอบคู่มือการใช้ระบบ และ (สำหรับ Launch Partner) ดีมจะสอนใช้งานสด และช่วยติดตามระบบต่อให้อีก 30 วัน</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 4. How It Works Section -->
+  <div class="section-wrapper bg-main" id="process">
+    <div class="blob" style="width:450px;height:450px;background:rgba(56,182,255,0.04);bottom:10%;right:-100px;"></div>
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-green);">3 ขั้นตอนง่ายๆ</span>
+        <h2 class="section-title">ขั้นตอนการสร้างระบบ กับดีม</h2>
+        <p class="section-subtitle">ดีมจะคอยดูแลและทำให้คุณในทุกๆ ส่วน คุณมีหน้าที่เพียงเตรียมความรู้และไอเดียของคุณเท่านั้น</p>
+      </div>
+
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="card green-border">
+          <div class="card-top">
+            <span class="card-badge green" style="border-radius:50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: bold; background: rgba(34,197,94,0.1); color: var(--accent-green);">1</span>
+            <i class="fa-solid fa-comments color-green" style="font-size: 1.2rem;"></i>
+          </div>
+          <h3 class="card-title">1. คุยปรับแผนและไอเดีย (Strategy Call)</h3>
+          <p class="card-desc">คุยวิดีโอคอลกลยุทธ์ส่วนตัวเพื่อหาทิศทาง คัดเลือกหัวข้อสินค้าที่น่าจะขายดี ออกแบบรูปแบบสินค้า และวางแผนโครงสร้างระบบที่เหมาะสมที่สุดสำหรับคุณ</p>
+        </div>
+
+        <div class="card green-border">
+          <div class="card-top">
+            <span class="card-badge green" style="border-radius:50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: bold; background: rgba(34,197,94,0.1); color: var(--accent-green);">2</span>
+            <i class="fa-solid fa-screwdriver-wrench color-green" style="font-size: 1.2rem;"></i>
+          </div>
+          <h3 class="card-title">2. ดีมขึ้นโครงสร้างระบบ (Back-End Setup)</h3>
+          <p class="card-desc">ดีมจัดการเซ็ตอัปหน้าสั่งซื้อสินค้าบน Stripe สมัครและยืนยันตัวตน เชื่อมเข้ากับ Notion Database และตั้ง Automation เมลส่งมอบสินค้าทันทีหลังจ่ายเงิน</p>
+        </div>
+
+        <div class="card green-border">
+          <div class="card-top">
+            <span class="card-badge green" style="border-radius:50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: bold; background: rgba(34,197,94,0.1); color: var(--accent-green);">3</span>
+            <i class="fa-solid fa-circle-check color-green" style="font-size: 1.2rem;"></i>
+          </div>
+          <h3 class="card-title">3. ทดสอบและส่งมอบระบบ (Delivery & Launch)</h3>
+          <p class="card-desc">ทดสอบการชำระเงินจริงให้คุณดูทีละสเต็ป ส่งมอบระบบพร้อมคลิปแนะนำการใช้งานที่สั้น กระชับ เข้าใจง่าย เพื่อให้คุณพร้อมรับยอดเงินแรกได้ทันที</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 4.5 Flow Automation Sandbox Section -->
+  <div class="section-wrapper bg-main" id="automation-flow" style="border-top: 1px solid var(--glass-border-subtle);">
+    <div class="blob" style="width:400px;height:400px;background:rgba(34,197,94,0.05);top:10%;left:-100px;"></div>
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-green);">ระบบทำงานแทนคุณ 24/7</span>
+        <h2 class="section-title">ตัวอย่างระบบทำงานอัตโนมัติที่เราจัดให้คุณ</h2>
+        <p class="section-subtitle">ทดลองกดเล่นทีละขั้นตอนเพื่อดูว่าข้อมูลเคลื่อนไหวและจัดส่งสินค้าให้ลูกค้าของคุณโดยอัตโนมัติอย่างไรหลังชำระเงินสำเร็จ</p>
+      </div>
+
+      <!-- Flow Automation Interactive Sandbox -->
+      <div class="flow-sandbox">
+        <div class="flow-visual">
+          <div class="flow-step-card active" data-step="1">
+            <div class="flow-step-icon"><i class="fa-solid fa-credit-card"></i></div>
+            <div class="flow-step-info">
+              <h4>1. ลูกค้าจ่ายเงิน</h4>
+              <p>รองรับ Stripe / PromptPay ปลอดภัยสูง</p>
+            </div>
+          </div>
+          
+          <div class="flow-step-card" data-step="2">
+            <div class="flow-step-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="flow-step-info">
+              <h4>2. ส่งอีเมลยืนยันทันที</h4>
+              <p>ส่งเมลยืนยันคำสั่งซื้อแบบอัตโนมัติ</p>
+            </div>
+          </div>
+
+          <div class="flow-step-card" data-step="3">
+            <div class="flow-step-icon"><i class="fa-solid fa-download"></i></div>
+            <div class="flow-step-info">
+              <h4>3. ลูกค้าได้รับสินค้าทันที</h4>
+              <p>ส่งลิงก์ E-book, Notion Template หรือไฟล์</p>
+            </div>
+          </div>
+
+          <div class="flow-step-card" data-step="4">
+            <div class="flow-step-icon"><i class="fa-solid fa-database"></i></div>
+            <div class="flow-step-info">
+              <h4>4. บันทึกข้อมูลเข้า Notion CRM</h4>
+              <p>บันทึกชื่อ ยอดเงิน สินค้าลงระบบทันที</p>
+            </div>
+          </div>
+
+          <div class="flow-step-card" data-step="5">
+            <div class="flow-step-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <div class="flow-step-info">
+              <h4>5. ติดตามและดูแลต่อเนื่อง</h4>
+              <p>ระบบส่งอีเมลทักทาย หรือดูแลลูกค้าต่อหลังเปิดรับสินค้า</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-detail-panel">
+          <div class="flow-detail-header">
+            <span id="detail-number" class="flow-detail-number">STEP 1</span>
+            <h3 id="detail-title" class="flow-detail-title">ลูกค้าชำระเงินผ่านระบบ</h3>
+          </div>
+          <p id="detail-desc" class="flow-detail-desc">
+            เมื่อลูกค้าคลิกสั่งซื้อสินค้าบนเว็บไซต์หรือหน้า Landing Page ของคุณ ระบบจะพาไปยังหน้า Checkout ที่ปลอดภัยของ Stripe ลูกค้าสามารถเลือกชำระผ่านบัตรเครดิต/เดบิต หรือสแกน QR Code PromptPay ได้โดยตรงอย่างสะดวกสบายและรวดเร็ว
+          </p>
+          <div class="flow-detail-tech">
+            <span>เครื่องมือที่ใช้หลังบ้าน:</span>
+            <span class="tech-tag">Stripe Checkout</span>
+            <span class="tech-tag">PromptPay API</span>
+            <span class="tech-tag">Framer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 5. Pricing Tiers Section -->
+  <div class="section-wrapper bg-alt" id="pricing" style="border-top: 1px solid var(--glass-border-subtle);">
+    <div class="blob" style="width:600px;height:600px;background:rgba(34,197,94,0.06);top:30%;right:-250px;"></div>
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-green);">PRICING PACKAGES</span>
+        <h2 class="section-title">แพ็กเกจบริการ Withdeem.agency</h2>
+        <p class="section-subtitle">เลือกแพ็กเกจตามสิ่งที่คุณมีตอนนี้ — ยังมีแค่ไอเดีย, มีสินค้าแล้ว, หรืออยากให้ดีมทำให้ครบทั้งสินค้า หน้าเว็บ และระบบเริ่มขาย</p>
+      </div>
+
+      <!-- Note Banner -->
+      <div style="max-width: 850px; margin: -10px auto 30px; padding: 14px 20px; border-radius: 12px; background: rgba(34, 197, 94, 0.04); border: 1px dashed rgba(34, 197, 94, 0.2); display: flex; align-items: center; gap: 12px; justify-content: center; font-size: 0.9rem; color: var(--text-main); font-weight: 500; text-align: center;">
+        <i class="fa-solid fa-circle-info" style="color: var(--accent-green);"></i>
+        <span><strong>หมายเหตุ:</strong> หากเริ่มจาก Consult & Direction แล้วตัดสินใจทำแพ็กเกจถัดไป สามารถนำค่า Consult ไปหักออกจากแพ็กเกจหลักได้</span>
+      </div>
+
+      <!-- Top Row: Tiers 1-3 -->
+      <div class="pricing-grid-top">
+        <!-- Tier 1: Consult & Direction -->
+        <div class="card amber-border">
+          <div class="card-top">
+            <span class="card-badge amber" style="font-weight: bold;">คุย / ให้คำปรึกษา</span>
+            <i class="fa-solid fa-comments color-amber" style="font-size: 1.25rem;"></i>
+          </div>
+          <h3 class="card-title" style="min-height: auto; margin-bottom: 4px;">01. Consult & Direction</h3>
+          <div class="card-tag-text" style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 8px;">🎯 สำหรับคนที่ยังไม่รู้จะเริ่มจากตรงไหน</div>
+          <div class="card-price color-amber" style="font-size: 2.2rem; font-weight: 800; margin-bottom: 12px;">990 บาท</div>
+          
+          <div class="pricing-section-title">ดีมทำอะไรให้:</div>
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-comments"></i>
+              <span>คุยภาพรวมธุรกิจ ไอเดีย หรือสิ่งที่อยากทำ</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-compass"></i>
+              <span>ช่วยดูว่าควรเริ่มจากอะไรก่อน</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span>แนะนำว่าสิ่งที่มีควรต่อยอดเป็นสินค้า ระบบ หรือแพ็กเกจแบบไหน</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-list-check"></i>
+              <span>ช่วยจัดลำดับสิ่งที่ควรทำต่อ</span>
+            </li>
+          </ul>
+
+          <div class="pricing-section-title">ลูกค้าได้อะไร:</div>
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>รู้ว่าควรเริ่มจากตรงไหน</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>เห็นแนวทางต่อยอดเบื้องต้น</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>รู้ว่าเหมาะกับแพ็กเกจไหน</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ลดความมั่วก่อนเริ่มทำจริง</span>
+            </li>
+          </ul>
+
+          <div style="font-size: 0.85rem; color: var(--text-main); font-weight: bold; margin-top: 12px; margin-bottom: 4px;">เหมาะสำหรับ:</div>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 12px;">คนที่มีไอเดีย แต่ยังไม่มั่นใจว่าจะเริ่มจากตรงไหน</p>
+
+          <div style="margin-top: 12px; margin-bottom: 16px; font-size: 0.8rem; color: var(--text-muted); font-weight: 600; padding: 6px; border-radius: 4px; background: rgba(245, 158, 11, 0.05); text-align: center;">
+            🎯 Scope: 45–60 นาที | หักค่า Consult ได้เมื่อเริ่มแพ็กเกจหลัก
+          </div>
+
+          <div class="card-actions-1">
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="btn btn-pricing-amber btn-sm" style="width: 100%; justify-content: center; font-weight: bold;">จอง Consult →</a>
+          </div>
+        </div>
+
+        <!-- Tier 2: Product Setup -->
+        <div class="card green-border">
+          <div class="card-top">
+            <span class="card-badge green" style="background: rgba(34,197,94,0.1); color: var(--accent-green); font-weight: bold;">ดีมทำให้</span>
+            <i class="fa-solid fa-file-invoice color-green" style="font-size: 1.25rem;"></i>
+          </div>
+          <h3 class="card-title" style="min-height: auto; margin-bottom: 4px;">02. Product Setup</h3>
+          <div class="card-tag-text" style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 8px;">🎯 สำหรับคนที่มีไอเดียหรือความรู้</div>
+          <div class="card-price color-green" style="font-size: 2.2rem; font-weight: 800; margin-bottom: 12px;">4,900 บาท</div>
+          
+          <div class="pricing-section-title">ดีมทำอะไรให้:</div>
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-clipboard-list"></i>
+              <span>เก็บไอเดียและ Requirement</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-box-open"></i>
+              <span>แตกไอเดียให้เป็นสินค้า 1 ชิ้น</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-sitemap"></i>
+              <span>วางโครงสร้างสินค้า</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-pen-to-square"></i>
+              <span>เรียบเรียงเนื้อหาเบื้องต้น</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-folder-open"></i>
+              <span>จัดไฟล์ให้พร้อมใช้งาน</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-align-left"></i>
+              <span>เขียนคำอธิบายสินค้าเบื้องต้น</span>
+            </li>
+          </ul>
+
+          <div class="pricing-section-title">ลูกค้าได้อะไร:</div>
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>สินค้า 1 ชิ้นพร้อมใช้</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>โครงสร้างสินค้าชัดเจน</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ไฟล์ที่นำไปแจก ขาย หรือโปรโมตต่อได้</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ข้อความอธิบายสินค้าเบื้องต้น</span>
+            </li>
+          </ul>
+
+          <div style="font-size: 0.85rem; color: var(--text-main); font-weight: bold; margin-top: 12px; margin-bottom: 4px;">เหมาะสำหรับ:</div>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 12px;">คนที่มีความรู้หรือไอเดีย แต่อยากให้ดีมช่วยทำออกมาเป็นสินค้า</p>
+
+          <div style="margin-top: 12px; margin-bottom: 16px; font-size: 0.8rem; color: var(--text-muted); font-weight: 600; padding: 6px; border-radius: 4px; background: rgba(34, 197, 94, 0.05); text-align: center;">
+            🎯 Scope: 1 สินค้า / แก้ไข 1 รอบ
+          </div>
+
+          <div class="card-actions-1">
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="btn btn-pricing-green btn-sm" style="width: 100%; justify-content: center; font-weight: bold;">เริ่มทำสินค้า →</a>
+          </div>
+        </div>
+
+        <!-- Tier 3: System Setup -->
+        <div class="card blue-border">
+          <div class="card-top">
+            <span class="card-badge blue" style="background: rgba(56,182,255,0.1); color: var(--accent-blue); font-weight: bold;">ดีมทำให้</span>
+            <i class="fa-solid fa-screwdriver-wrench color-blue" style="font-size: 1.25rem;"></i>
+          </div>
+          <h3 class="card-title" style="min-height: auto; margin-bottom: 4px;">03. System Setup</h3>
+          <div class="card-tag-text" style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 8px;">🎯 สำหรับคนที่มีสินค้าแล้ว</div>
+          <div class="card-price color-blue" style="font-size: 2.2rem; font-weight: 800; margin-bottom: 12px;">7,900 บาท</div>
+          
+          <div class="pricing-section-title">ดีมทำอะไรให้:</div>
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>ดูสินค้าที่ลูกค้ามีอยู่แล้ว</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-diagram-project"></i>
+              <span>วาง Flow การขายเบื้องต้น</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-face-smile"></i>
+              <span>ทำหน้า Delivery / Thank You</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-credit-card"></i>
+              <span>เชื่อมช่องทางรับออเดอร์หรือชำระเงิน</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>วางระบบส่งมอบสินค้า</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-database"></i>
+              <span>ทำฐานข้อมูลลูกค้าเบื้องต้น</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-book"></i>
+              <span>ทำคู่มือใช้งานพื้นฐาน</span>
+            </li>
+          </ul>
+
+          <div class="pricing-section-title">ลูกค้าได้อะไร:</div>
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ระบบรับออเดอร์ / รับเงิน</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ระบบส่งมอบสินค้า</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ฐานข้อมูลลูกค้าเบื้องต้น</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>วิธีใช้งานระบบพื้นฐาน</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ลดการส่งไฟล์เองแบบ Manual</span>
+            </li>
+          </ul>
+
+          <div style="font-size: 0.85rem; color: var(--text-main); font-weight: bold; margin-top: 12px; margin-bottom: 4px;">เหมาะสำหรับ:</div>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 12px;">คนที่มีสินค้าแล้ว แต่ยังขายหรือส่งมอบแบบ Manual</p>
+
+          <div style="margin-top: 12px; margin-bottom: 16px; font-size: 0.8rem; color: var(--text-muted); font-weight: 600; padding: 6px; border-radius: 4px; background: rgba(34, 197, 94, 0.05); text-align: center;">
+            🎯 Scope: 1 Flow สำหรับสินค้า 1 ชิ้น
+          </div>
+
+          <div class="card-actions-1">
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="btn btn-pricing-blue btn-sm" style="width: 100%; justify-content: center; font-weight: bold;">วางระบบให้สินค้า →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row: Tiers 4-5 (Featured Tiers) -->
+      <div class="pricing-grid-bottom">
+        <!-- Tier 4: Product Launch System -->
+        <div class="card purple-border card-featured-agent" style="position: relative;">
+          <div class="card-top">
+            <span class="card-badge purple" style="font-weight: bold; background: var(--accent-purple); color: white;">แนะนำ &middot; ดีมทำให้</span>
+            <i class="fa-solid fa-rocket color-purple" style="font-size: 1.25rem;"></i>
+          </div>
+          <h3 class="card-title" style="min-height: auto; margin-bottom: 4px;">04. Product Launch System</h3>
+          <div class="card-tag-text" style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 8px;">🎯 สำหรับคนที่อยากได้ทุกอย่างพร้อมเริ่มขาย</div>
+          <div class="card-price color-purple" style="font-size: 2.2rem; font-weight: 800; margin-bottom: 12px;">12,900 บาท</div>
+          
+          <div class="pricing-section-title">ดีมทำอะไรให้:</div>
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-box-open"></i>
+              <span>ทำสินค้า 1 ชิ้น</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-globe"></i>
+              <span>ทำ Landing Page / หน้าขาย 1 หน้า</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-bullhorn"></i>
+              <span>เขียนข้อความขายและวาง CTA</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-credit-card"></i>
+              <span>เชื่อมระบบรับออเดอร์หรือชำระเงิน</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>ทำระบบส่งมอบสินค้า</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-database"></i>
+              <span>ทำฐานข้อมูลลูกค้าเบื้องต้น</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-book-open"></i>
+              <span>ทำคู่มือใช้งานพื้นฐาน</span>
+            </li>
+          </ul>
+
+          <div class="pricing-section-title">ลูกค้าได้อะไร:</div>
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>สินค้า 1 ชิ้น</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>หน้าเว็บหรือหน้าขาย 1 หน้า</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ระบบรับออเดอร์ / รับเงิน</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ระบบส่งมอบสินค้า</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ฐานข้อมูลลูกค้า</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ระบบแรกที่พร้อมนำไปขายหรือทดลองตลาด</span>
+            </li>
+          </ul>
+
+          <div style="font-size: 0.85rem; color: var(--text-main); font-weight: bold; margin-top: 12px; margin-bottom: 4px;">เหมาะสำหรับ:</div>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 12px;">คนที่อยากได้สินค้า หน้าเว็บ และระบบเริ่มขายครบในชุดเดียว</p>
+
+          <div style="margin-top: 12px; margin-bottom: 16px; font-size: 0.8rem; color: var(--text-muted); font-weight: 600; padding: 6px; border-radius: 4px; background: rgba(168, 85, 247, 0.05); text-align: center;">
+            🎯 Scope: 1 สินค้า / 1 หน้าเว็บ / 1 ระบบ / แก้ไข 2 รอบ
+          </div>
+
+          <div class="card-actions-1">
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="btn btn-pricing-purple btn-sm" style="width: 100%; justify-content: center; font-weight: bold;">เริ่มทำระบบพร้อมขาย →</a>
+          </div>
+        </div>
+
+        <!-- Tier 5: Launch Partner -->
+        <div class="card blue-border">
+          <div class="card-top">
+            <span class="card-badge blue" style="background: rgba(56,182,255,0.15); color: var(--accent-blue); font-weight: bold;">ดีมทำให้ + สอน + ดูแล</span>
+            <i class="fa-solid fa-handshake color-blue" style="font-size: 1.25rem;"></i>
+          </div>
+          <h3 class="card-title" style="min-height: auto; margin-bottom: 4px;">05. Launch Partner</h3>
+          <div class="card-tag-text" style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 8px;">🎯 สำหรับคนที่อยากให้ดีมพาเริ่มจริงจัง</div>
+          <div class="card-price color-blue" style="font-size: 2.2rem; font-weight: 800; margin-bottom: 12px;">19,900 บาท</div>
+          
+          <div class="pricing-section-title">ดีมทำอะไรให้:</div>
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-check-double"></i>
+              <span>ทุกอย่างใน Product Launch System</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span>Session สอนใช้งาน 1 ครั้ง 60–90 นาที</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-diagram-project"></i>
+              <span>อธิบาย Flow ทั้งระบบ</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-sliders"></i>
+              <span>สอนแก้ไขและใช้งานพื้นฐาน</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-headset"></i>
+              <span>Support 30 วันผ่านแชท</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+              <span>Review ระบบหลังใช้งาน 1 รอบ</span>
+            </li>
+            <li class="pricing-feature-item what-i-do">
+              <i class="fa-solid fa-rocket"></i>
+              <span>แนะนำ Next Step เบื้องต้น</span>
+            </li>
+          </ul>
+
+          <div class="pricing-section-title">ลูกค้าได้อะไร:</div>
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ระบบพร้อมใช้งาน</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>เข้าใจวิธีใช้ระบบ</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>มีคนช่วยดูช่วงเริ่มต้น</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ลดโอกาสติดขัดหลังส่งมอบ</span>
+            </li>
+            <li class="pricing-feature-item what-you-get">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>ได้แนวทางต่อยอดหลังเริ่มใช้จริง</span>
+            </li>
+          </ul>
+
+          <div style="font-size: 0.85rem; color: var(--text-main); font-weight: bold; margin-top: 12px; margin-bottom: 4px;">เหมาะสำหรับ:</div>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 12px;">คนที่อยากได้ระบบ และอยากมีคนช่วยดูช่วงเริ่มต้น</p>
+
+          <div style="margin-top: 12px; margin-bottom: 16px; font-size: 0.8rem; color: var(--text-muted); font-weight: 600; padding: 6px; border-radius: 4px; background: rgba(56, 182, 255, 0.05); text-align: center;">
+            🎯 Scope: Support 30 วัน / สอน 1 ครั้ง
+          </div>
+
+          <div class="card-actions-1">
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="btn btn-pricing-blue btn-sm" style="width: 100%; justify-content: center; font-weight: bold;">เริ่มแบบมีคนช่วยดูแล →</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="max-width: 800px; margin: 40px auto 0; font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; text-align: center; border-top: 1px solid var(--glass-border-subtle); padding-top: 24px;">
+        * ราคานี้เป็นราคาเริ่มต้นตาม Scope ที่กำหนด ไม่รวมค่าเครื่องมือรายเดือน ค่าธรรมเนียมแพลตฟอร์ม หรือค่าธรรมเนียมรับชำระเงิน งานเพิ่มเติมนอก Scope เช่น เพิ่มสินค้า เพิ่มหน้าเว็บ เพิ่มระบบ เพิ่ม Automation หรือสอนใช้งานแบบละเอียด จะคิดเป็น Add-on แยกตามรายละเอียด
+      </div>
+
+      <div style="max-width: 700px; margin: 30px auto 0; font-size: 0.95rem; color: var(--text-main); line-height: 1.6; text-align: center; font-weight: 600; padding: 18px; border-radius: 12px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--glass-border-subtle);">
+        💡 ถ้ายังไม่แน่ใจว่าเหมาะกับแพ็กเกจไหน ให้เริ่มจาก <span style="color: var(--accent-amber);">Consult & Direction</span> ก่อน ดีมจะช่วยดูภาพรวมและแนะนำทางที่เหมาะกับสิ่งที่คุณมีตอนนี้
+      </div>
+    </section>
+  </div>
+
+  <!-- Add-on Services Section -->
+  <div class="section-wrapper bg-main" id="addons" style="border-top: 1px solid var(--glass-border-subtle); padding: 80px 0;">
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--accent-blue);">ADD-ON SERVICES</span>
+        <h2 class="section-title">บริการเสริมเพิ่มเติม</h2>
+        <p class="section-subtitle">คุณสามารถเลือกซื้อบริการเสริมแยกชิ้นเพิ่มเติมได้ตามความต้องการเพื่อขยายขอบเขตระบบของคุณ</p>
+      </div>
+
+      <div class="addons-grid">
+        <div class="addon-card">
+          <div class="addon-info">
+            <h4>Landing Page เพิ่ม</h4>
+            <p>ออกแบบและพับหน้าเพจขายสินค้าเพิ่มเติมบน Framer</p>
+          </div>
+          <div class="addon-price">+ 1,990 ฿</div>
+        </div>
+
+        <div class="addon-card">
+          <div class="addon-info">
+            <h4>Email Template เพิ่ม</h4>
+            <p>ออกแบบหน้าตาและข้อความอีเมลส่งของพรีเมียมเพิ่ม 1 แบบ</p>
+          </div>
+          <div class="addon-price">+ 990 ฿</div>
+        </div>
+
+        <div class="addon-card">
+          <div class="addon-info">
+            <h4>Membership System</h4>
+            <p>เชื่อมระบบจัดการสมาชิกพรีเมียมสำหรับคอร์สหรือชุมชน</p>
+          </div>
+          <div class="addon-price">+ 2,990 ฿</div>
+        </div>
+
+        <div class="addon-card">
+          <div class="addon-info">
+            <h4>Custom Dashboard</h4>
+            <p>ออกแบบแดชบอร์ด Notion Custom ในแบบธุรกิจคุณโดยเฉพาะ</p>
+          </div>
+          <div class="addon-price">+ 1,990 ฿</div>
+        </div>
+
+        <div class="addon-card">
+          <div class="addon-info">
+            <h4>Automation เพิ่มเติม</h4>
+            <p>ตั้งค่า Automation เชื่อมต่อข้อมูลเพิ่มเติม (Webhook / Make)</p>
+          </div>
+          <div class="addon-price">+ 2,990 ฿</div>
+        </div>
+
+        <div class="addon-card">
+          <div class="addon-info">
+            <h4>Support เพิ่ม 30 วัน</h4>
+            <p>ขยายบริการดูแลหลังบ้าน ปรับแต่ง แนะนำฟังก์ชันเพิ่ม 30 วัน</p>
+          </div>
+          <div class="addon-price">+ 2,990 ฿</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Resource Hub Section -->
+  <div class="section-wrapper bg-alt" id="resource-hub" style="border-top: 1px solid var(--glass-border-subtle); padding: 80px 0;">
+    <section class="section" style="padding: 40px 24px;">
+      <div class="card" style="border-radius: 24px; padding: 48px; text-align: center; border-color: rgba(var(--accent-green-rgb), 0.25); background: linear-gradient(135deg, rgba(2,4,10,0.4), rgba(34,197,94,0.02));">
+        <span class="card-badge green" style="background: rgba(34, 197, 94, 0.1); color: var(--accent-green); margin: 0 auto 20px auto; display: inline-block;">RESOURCE HUB</span>
+        <h3 class="card-title" style="min-height: auto; font-size: 1.8rem; font-weight: 800; margin-bottom: 12px;">ฟรี Resource Hub สำหรับทุกแพ็กเกจ</h3>
+        <p class="card-desc" style="max-width: 650px; margin: 0 auto 32px auto; font-size: 0.95rem; line-height: 1.6;">
+          เรารวมเครื่องมือที่ใช้งานจริง พร้อมจัดเตรียมคู่มือแบบก้าวต่อก้าว และแนวการไหลของข้อมูล (Workflow Templates) ให้คุณไปใช้งานได้ทันทีเพื่ออำนวยความสะดวกในการบริหารแบรนด์ด้วยตนเอง
+        </p>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 24px; flex-wrap: wrap; opacity: 0.85;">
+          <div style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-layer-group color-blue"></i> Framer</div>
+          <div style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.85rem;"><i class="fa-brands fa-stripe color-purple"></i> Stripe</div>
+          <div style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-cube color-green"></i> Notion</div>
+          <div style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.85rem;"><i class="fa-regular fa-envelope color-red"></i> Gmail</div>
+          <div style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-wand-magic-sparkles color-amber"></i> Make</div>
+          <div style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-gears color-blue"></i> Pably</div>
+          <div style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-robot color-green"></i> ChatGPT</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- 6. FAQ Section -->
+  <div class="section-wrapper bg-main" id="faq">
+    <section class="section" id="faq">
+      <div class="faq-grid">
+        <div class="faq-left">
+          <div class="section-header left-align">
+            <span class="section-eyebrow" style="color: var(--accent-green);">คำถามที่พบบ่อย</span>
+            <h2 class="section-title" style="font-size: 2.2rem;">ข้อสงสัยเกี่ยวกับบริการ?</h2>
+            <p class="section-subtitle">คำถามทั่วไปที่หลายคนมักสงสัย หากคุณยังมีคำถามคาใจเรื่องการตั้งค่าระบบ Stripe หรือการจัดส่งของ สามารถทักสอบถามดีมได้โดยตรงครับ</p>
+          </div>
+          <div>
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 14px 28px; font-weight: 600; border-radius: var(--border-radius-sm); border-color: var(--accent-green); color: var(--accent-green);">
+              <i class="fa-brands fa-instagram" style="margin-right: 8px;"></i>
+              <span>DM ที่ @d.withdeem</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="faq-accordions">
+          <!-- Q1 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-question">Q1: ต้องมีผู้ติดตามเยอะไหมถึงจะเริ่มขายได้?</h3>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-body" style="padding: 20px 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
+                ไม่จำเป็นเลยครับ! ระบบขายอัตโนมัติถูกออกแบบมาเพื่อช่วยสร้างความน่าเชื่อถือตั้งแต่ลูกค้าคนแรกและทดสอบตลาดจริง (Market Fit) ได้อย่างคุ้มทุนที่สุด ดีมจะแนะนำวิธีเปิดตัวสินค้าโดยเริ่มจากศูนย์ผ่านกลุ่มเป้าหมายขนาดเล็ก เพื่อยืนยันคุณภาพก่อนจะขยายขอบเขตครับ
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-question">Q2: ใช้เวลานานเท่าไหร่ในการทำระบบเสร็จสิ้น?</h3>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-body" style="padding: 20px 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
+                สำหรับแพ็กเกจ <strong>Setup</strong> ปกติใช้เวลาไม่เกิน 7-14 วันทำการ หลังคุย Strategy Call 1-on-1 จบลงและดีมได้รับข้อมูลไอเดีย ตัวตน รูปภาพ หรือตัวสินค้าที่จะอัปโหลดจากคุณครบถ้วนครับ
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-question">Q3: Stripe ในไทยสมัครยังไง ปลอดภัยต่อข้อมูลไหม?</h3>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-body" style="padding: 20px 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
+                ปัจจุบันบุคคลธรรมดาในไทยสามารถสมัครใช้งาน Stripe ได้รวดเร็วและปลอดภัยมากครับ เงินจะถูกโอนเข้าบัญชีธนาคารไทยที่คุณตั้งค่าไว้โดยตรง ดีมจะคอยดูแลแนะนำวิธีกรอกข้อมูลและตั้งค่าความปลอดภัย ป้องกันข้อมูลลูกค้ารั่วไหลได้อย่างเป็นระเบียบ ถูกต้องตามหลักเกณฑ์ความปลอดภัยสากล
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-question">Q4: ถ้าอยากเพิ่มสินค้าชิ้นใหม่ในอนาคต ต้องให้ดีมทำให้ใหม่ไหม?</h3>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-body" style="padding: 20px 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
+                ไม่ต้องเลยครับ ดีมจะส่งมอบระบบพร้อมทำคลิปวิดีโอคู่มือสั้นๆ สอนวิธีเพิ่ม/แก้ไขสินค้าชิ้นใหม่ เปลี่ยนรูปอัพเดตราคาด้วยตนเองในเวลาไม่เกิน 5 นาที เพื่อให้คุณควบคุมแบรนด์และระบบของคุณได้ 100% โดยไม่ต้องพึ่งดีมตลอดไปครับ
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 7. Final CTA Banner -->
+  <div class="section-wrapper bg-dark cta-wrapper" style="background-color: var(--bg-dark); color-scheme: dark;">
+    <section class="section cta-banner-section" id="cta">
+      <div class="cta-banner-container" style="text-align: center; max-width: 700px; margin: 0 auto; padding: 40px 24px;">
+        <span class="cta-banner-eyebrow" style="font-family: var(--font-headings); font-size: 0.75rem; font-weight: 700; color: var(--accent-green); letter-spacing: 0.05em; text-transform: uppercase;">READY TO START</span>
+        <h2 class="cta-banner-title" style="font-family: var(--font-headings); font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.2; margin: 16px 0 20px;">เปลี่ยนความเชี่ยวชาญของคุณ<br>ให้เริ่มทำงานแทนคุณเลยวันนี้</h2>
+        <p class="cta-banner-sub" style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 32px;">
+          หยุดเสียเวลาแกะระบบเองหลังเลิกงาน ปล่อยให้ดีมเซ็ตอัประบบความปลอดภัยสูงส่งต่อสินค้าอัตโนมัติ เพื่อให้คุณมีเวลาไปโฟกัสการสร้างตัวตนและผลิตไอเดียดีๆ ออกมา
+        </p>
+        <div>
+          <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: var(--accent-green); color: #02040A; border-color: var(--accent-green); padding: 14px 28px; font-weight: 600; border-radius: var(--border-radius-sm);">
+            <i class="fa-regular fa-calendar-days" style="margin-right: 8px;"></i>
+            <span>ทักดีมเพื่อจองคิวเริ่มทำระบบ →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 8. Footer (Persistent Dark Footer, Cross-linked) -->
+  <footer class="footer-wrapper" style="background-color: #02040A; color-scheme: dark;">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1 -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo-link">
+            <div class="logo-mark" style="background: var(--accent-green);">dw</div>
+            <span class="logo-text">d.withdeem</span>
+          </a>
+          <p class="footer-tagline">ระบบการเงิน การลงทุน ชีวิต สำหรับคนธรรมดาที่อยากเริ่มต้นจริงและทำได้อย่างเป็นระบบ</p>
+          <div class="footer-socials">
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://threads.net/@d.withdeem" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Threads">
+              <i class="fa-brands fa-threads"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <h3 class="footer-col-title">Products</h3>
+          <div class="footer-links">
+            <a href="https://financeos-dwithdeem.framer.website/" target="_blank" rel="noopener noreferrer">FinanceOS</a>
+            <a href="https://buy.stripe.com/6oUeV69LS9BIepU0zzcfK05" target="_blank" rel="noopener noreferrer">DCA PlanOS</a>
+            <a href="stock-deep.html">d.StockDeep <span style="font-size: 0.72rem; color: var(--accent-blue); font-weight: bold; margin-left: 4px;">NEW</span></a>
+            <a href="index.html#templates">PortfolioOS <span style="font-size: 0.72rem; color: var(--accent-amber); font-weight: bold; margin-left: 4px;">SOON</span></a>
+            <a href="index.html#promotions">InvestClub</a>
+            <a href="solobrandos.html">SoloBrandOS</a>
+            <a href="dream-agent.html">Withdeem.agency <span style="font-size: 0.72rem; color: var(--accent-green); font-weight: bold; margin-left: 4px;">NEW</span></a>
+          </div>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <h3 class="footer-col-title">ฟรี Resources</h3>
+          <div class="footer-links">
+            <a href="https://dwithdeem.notion.site/Starter-Pack-Investment-3354f77e50b4800fa34cd7acacb17ff8" target="_blank" rel="noopener noreferrer">Starter Pack Investment</a>
+            <a href="https://dwithdeem.notion.site/From-Zero-to-Money-System-3254f77e50b4806a99b4dd9221785604" target="_blank" rel="noopener noreferrer">From Zero to Money System</a>
+            <a href="https://dwithdeem.notion.site/Space-Economy-Stocks-E-Book-The-Complete-Guide-2026-2248286daa514d4ab9e8f9d57efa8f4c" target="_blank" rel="noopener noreferrer">Space Economy EBook</a>
+          </div>
+        </div>
+
+        <!-- Col 4 -->
+        <div>
+          <h3 class="footer-col-title">เพิ่มเติม</h3>
+          <div class="footer-links">
+            <a href="index.html#about">เกี่ยวกับดีม</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer">ติดต่อเรา</a>
+            <a href="https://instagram.com/d.withdeem" target="_blank" rel="noopener noreferrer">@d.withdeem</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 d.withdeem. All rights reserved.</p>
+        <span class="footer-motto">USE YOUR 9-5 TO FUND YOUR 5-9</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dashboard Preview Modal -->
+  <div id="dashboard-modal" class="dashboard-modal">
+    <div class="dashboard-modal-content">
+      <span class="dashboard-modal-close" onclick="closeDashboardModal()">&times;</span>
+      <div class="dashboard-modal-body">
+        <h3 id="modal-title" class="dashboard-modal-title">Dashboard Name</h3>
+        <p id="modal-subtitle" class="dashboard-modal-subtitle">Dashboard Subtitle</p>
+        <div class="dashboard-modal-image-container">
+          <img id="modal-image" src="" alt="Dashboard Preview">
+        </div>
+        <div class="dashboard-modal-features-section">
+          <h4 style="font-family: var(--font-headings); font-size: 1rem; margin-bottom: 12px;">ฟังก์ชันและสิ่งที่จะได้รับ:</h4>
+          <ul id="modal-features" class="dashboard-modal-features-list" style="list-style: none; padding-left: 0; font-size: 0.9rem; color: var(--text-muted);">
+            <!-- Will be populated dynamically -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
